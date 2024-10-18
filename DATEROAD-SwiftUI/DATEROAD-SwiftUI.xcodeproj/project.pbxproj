@@ -17,6 +17,7 @@
 		CA68970C2CC27E3E005315B1 /* SUIT-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897072CC27E3E005315B1 /* SUIT-Medium.otf */; };
 		CA68970D2CC27E3E005315B1 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */; };
 		CA6897102CC27EC1005315B1 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68970F2CC27EC1005315B1 /* Font+.swift */; };
+		CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897132CC28239005315B1 /* StringLiterals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-SemiBold.otf"; sourceTree = "<group>"; };
 		CA68970F2CC27EC1005315B1 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		CA6897112CC280F9005315B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA6897132CC28239005315B1 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		CA6897012CC26F37005315B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897122CC2820E005315B1 /* Literal */,
 				CA68970E2CC27EAD005315B1 /* Extension */,
 				CA6897022CC26F3E005315B1 /* Resources */,
 			);
@@ -157,6 +160,14 @@
 				CA68970F2CC27EC1005315B1 /* Font+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CA6897122CC2820E005315B1 /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897132CC28239005315B1 /* StringLiterals.swift */,
+			);
+			path = Literal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
+				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
