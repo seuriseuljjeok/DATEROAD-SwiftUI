@@ -18,6 +18,8 @@
 		CA68970D2CC27E3E005315B1 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */; };
 		CA6897102CC27EC1005315B1 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68970F2CC27EC1005315B1 /* Font+.swift */; };
 		CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897132CC28239005315B1 /* StringLiterals.swift */; };
+		CA6897182CC284C6005315B1 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CA6897172CC284C6005315B1 /* Development.xcconfig */; };
+		CA68971A2CC287A3005315B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897192CC287A3005315B1 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CA68970F2CC27EC1005315B1 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		CA6897112CC280F9005315B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CA6897132CC28239005315B1 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
+		CA6897172CC284C6005315B1 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		CA6897192CC287A3005315B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		CA6897012CC26F37005315B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897152CC28479005315B1 /* Setting */,
 				CA6897122CC2820E005315B1 /* Literal */,
 				CA68970E2CC27EAD005315B1 /* Extension */,
 				CA6897022CC26F3E005315B1 /* Resources */,
@@ -168,6 +173,23 @@
 				CA6897132CC28239005315B1 /* StringLiterals.swift */,
 			);
 			path = Literal;
+			sourceTree = "<group>";
+		};
+		CA6897152CC28479005315B1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897162CC284AB005315B1 /* Configuration */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CA6897162CC284AB005315B1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897172CC284C6005315B1 /* Development.xcconfig */,
+				CA6897192CC287A3005315B1 /* Config.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +256,7 @@
 				CA68970C2CC27E3E005315B1 /* SUIT-Medium.otf in Resources */,
 				CA68970D2CC27E3E005315B1 /* SUIT-SemiBold.otf in Resources */,
 				CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */,
+				CA6897182CC284C6005315B1 /* Development.xcconfig in Resources */,
 				CA68970A2CC27E3E005315B1 /* SUIT-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +270,7 @@
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
+				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 			);
