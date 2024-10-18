@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
-		CA6896EF2CC26B55005315B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* ContentView.swift */; };
+		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
 		CA6896F42CC26B56005315B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F32CC26B56005315B1 /* Preview Assets.xcassets */; };
+		CA6897092CC27E3E005315B1 /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897042CC27E3E005315B1 /* SUIT-Bold.otf */; };
+		CA68970A2CC27E3E005315B1 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897052CC27E3E005315B1 /* SUIT-Regular.otf */; };
+		CA68970B2CC27E3E005315B1 /* SUIT-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897062CC27E3E005315B1 /* SUIT-ExtraBold.otf */; };
+		CA68970C2CC27E3E005315B1 /* SUIT-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897072CC27E3E005315B1 /* SUIT-Medium.otf */; };
+		CA68970D2CC27E3E005315B1 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */; };
+		CA6897102CC27EC1005315B1 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68970F2CC27EC1005315B1 /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
-		CA6896EE2CC26B55005315B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CA6896F02CC26B56005315B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA6896F32CC26B56005315B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA6897042CC27E3E005315B1 /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
+		CA6897052CC27E3E005315B1 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
+		CA6897062CC27E3E005315B1 /* SUIT-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraBold.otf"; sourceTree = "<group>"; };
+		CA6897072CC27E3E005315B1 /* SUIT-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Medium.otf"; sourceTree = "<group>"; };
+		CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-SemiBold.otf"; sourceTree = "<group>"; };
+		CA68970F2CC27EC1005315B1 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		CA6897112CC280F9005315B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +64,9 @@
 		CA6896EB2CC26B55005315B1 /* DATEROAD-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897112CC280F9005315B1 /* Info.plist */,
+				CA6896FC2CC26DD3005315B1 /* Presentation */,
 				CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */,
-				CA6896EE2CC26B55005315B1 /* ContentView.swift */,
-				CA6896F02CC26B56005315B1 /* Assets.xcassets */,
 				CA6896F22CC26B56005315B1 /* Preview Content */,
 			);
 			path = "DATEROAD-SwiftUI";
@@ -65,6 +78,85 @@
 				CA6896F32CC26B56005315B1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897012CC26F37005315B1 /* Global */,
+				CA6896FD2CC26DE1005315B1 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CA6896FD2CC26DE1005315B1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897002CC26E08005315B1 /* Model */,
+				CA6896FF2CC26E01005315B1 /* ViewModel */,
+				CA6896FE2CC26DEA005315B1 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CA6896FE2CC26DEA005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6896EE2CC26B55005315B1 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6896FF2CC26E01005315B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA6897002CC26E08005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA6897012CC26F37005315B1 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				CA68970E2CC27EAD005315B1 /* Extension */,
+				CA6897022CC26F3E005315B1 /* Resources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		CA6897022CC26F3E005315B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897032CC27E1B005315B1 /* Font */,
+				CA6896F02CC26B56005315B1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA6897032CC27E1B005315B1 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897042CC27E3E005315B1 /* SUIT-Bold.otf */,
+				CA6897062CC27E3E005315B1 /* SUIT-ExtraBold.otf */,
+				CA6897072CC27E3E005315B1 /* SUIT-Medium.otf */,
+				CA6897052CC27E3E005315B1 /* SUIT-Regular.otf */,
+				CA6897082CC27E3E005315B1 /* SUIT-SemiBold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		CA68970E2CC27EAD005315B1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CA68970F2CC27EC1005315B1 /* Font+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +217,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6897092CC27E3E005315B1 /* SUIT-Bold.otf in Resources */,
 				CA6896F42CC26B56005315B1 /* Preview Assets.xcassets in Resources */,
+				CA68970B2CC27E3E005315B1 /* SUIT-ExtraBold.otf in Resources */,
+				CA68970C2CC27E3E005315B1 /* SUIT-Medium.otf in Resources */,
+				CA68970D2CC27E3E005315B1 /* SUIT-SemiBold.otf in Resources */,
 				CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */,
+				CA68970A2CC27E3E005315B1 /* SUIT-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA6896EF2CC26B55005315B1 /* ContentView.swift in Sources */,
+				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
+				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +373,7 @@
 				DEVELOPMENT_TEAM = 72B557RJ7S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DATEROAD-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +403,7 @@
 				DEVELOPMENT_TEAM = 72B557RJ7S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DATEROAD-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
