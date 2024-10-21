@@ -23,3 +23,39 @@ struct TagView: View {
         .clipShape(.rect(cornerRadius: 20))
     }
 }
+
+struct MyPagePointView: View {
+    
+    @State var nickname: String
+    
+    @State var point: Int
+    
+    var body: some View {
+        VStack(spacing: 11) {
+            HStack {
+                Text("\(nickname)님의 포인트")
+                    .font(.suit(.body_med_13))
+                    .foregroundStyle(.gray400)
+                    .padding(.leading, 14)
+                    .padding(.top, 18)
+                Spacer()
+            }
+            HStack(spacing: 0) {
+                Text("\(point) P")
+                    .font(.suit(.title_extra_24))
+                    .foregroundStyle(.black000)
+                Spacer()
+                Text(MYPAGE.GO_TO_POINTS_DETAIL)
+                    .font(.suit(.body_med_13))
+                    .foregroundStyle(.gray400)
+                Image(.icRightsmallarrow)
+                    .frame(width: 18, height: 18)
+            }
+            .frame(height: 32)
+            .padding(.horizontal, 14)
+            .padding(.bottom, 12)
+        }
+        .background(.white000)
+        .clipShape(.rect(cornerRadius: 14))
+    }
+}
