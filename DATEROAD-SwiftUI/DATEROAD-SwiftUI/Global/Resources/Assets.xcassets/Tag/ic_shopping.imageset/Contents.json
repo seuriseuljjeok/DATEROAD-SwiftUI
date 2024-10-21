@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_shopping.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
