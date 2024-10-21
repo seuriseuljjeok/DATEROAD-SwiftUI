@@ -36,17 +36,13 @@ struct LoginView: View {
                 Button(action: {
                     
                 }) {
-                    HStack {
-                        Spacer()
-                        Text(LOGIN.APPLE_LOGIN)
-                            .font(.suit(.body_bold_15))
-                            .foregroundStyle(.white000)
-                        Spacer()
-                    }
-                    .frame(height: 45) // 버튼 자체의 높이 설정
-                    .background(.black000)
-                    .cornerRadius(6)
-                    .padding(.horizontal, 37) // 버튼의 좌우 여백 설정
+                    Text(LOGIN.APPLE_LOGIN)
+                        .frame(maxWidth: .infinity, minHeight: 45, alignment: .center)
+                        .font(.suit(.body_bold_15))
+                        .foregroundStyle(.white000)
+                        .background(.black000)
+                        .cornerRadius(6)
+                        .padding(.horizontal, 37) // 버튼의 좌우 여백 설정
                 }
                 Spacer().frame(height: 30)
                 Button(action: {

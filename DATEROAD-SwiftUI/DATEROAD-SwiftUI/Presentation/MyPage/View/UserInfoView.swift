@@ -67,14 +67,12 @@ struct MyPagePointView: View {
     
     var body: some View {
         VStack(spacing: 11) {
-            HStack {
-                Text("\(nickname)님의 포인트")
-                    .font(.suit(.body_med_13))
-                    .foregroundStyle(.gray400)
-                    .padding(.leading, 14)
-                    .padding(.top, 18)
-                Spacer()
-            }
+            Text("\(nickname)님의 포인트")
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.suit(.body_med_13))
+                .foregroundStyle(.gray400)
+                .padding(.leading, 14)
+                .padding(.top, 18)
             HStack(spacing: 0) {
                 Text("\(point) P")
                     .font(.suit(.title_extra_24))
