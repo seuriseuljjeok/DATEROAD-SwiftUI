@@ -5,7 +5,42 @@
 //  Created by 윤희슬 on 10/21/24.
 //
 
-import Foundation
+import SwiftUI
+
+struct UserInfoView: View {
+    
+    @State private var tagInfoData: MyPageUserInfoModel = MyPageUserInfoModel.emptyModel
+    
+    var body: some View {
+        VStack {
+            HStack(spacing: 0) {
+                Image(.emptyProfile)
+                    .resizable(resizingMode: .stretch)
+                    .clipShape(.circle)
+                    .frame(width: 44, height: 44)
+                Text(tagInfoData.nickname)
+                    .font(.suit(.title_extra_24))
+                    .padding(.leading, 16.5)
+                Image(.icPencil)
+                    .frame(width: 20, height: 20)
+                Spacer()
+            }
+            
+            HStack(spacing: 7) {
+                ForEach(tagInfoData.tagList, id: \.self) { tagList in
+                    if let tagInfo = TendencyTag.getTag(byEnglish: tagList) {
+                        TagView(tagInfo: tagInfo)
+                    }
+                }
+                Spacer()
+            }
+            Spacer().frame(height: 16)
+            
+            MyPagePointView(nickname: tagInfoData.nickname, point: tagInfoData.point)
+        }
+    }
+}
+
 struct TagView: View {
     
     @State var tagInfo: TendencyTag
