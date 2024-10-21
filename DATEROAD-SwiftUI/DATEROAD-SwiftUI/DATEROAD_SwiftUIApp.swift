@@ -11,7 +11,7 @@ import SwiftUI
 struct DATEROAD_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            MyPageView()
         }
     }
 }

@@ -59,6 +59,7 @@ struct MyPageSectionItem: View {
             Spacer()
             Image(.icRightarrow)
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             goToNextView(for: title)
         }
@@ -68,6 +69,7 @@ struct MyPageSectionItem: View {
                 isActive: $navigateToNextView,
                 label: { EmptyView() }
             )
+            .hidden()
         )
         .padding(.horizontal, 16)
     }
@@ -75,15 +77,16 @@ struct MyPageSectionItem: View {
     func goToNextView(for section: String) {
         switch section {
         case MyPageSection.myCourse.title:
-            print("go to mycourse")
+            nextView = AnyView(LoginView())
         case MyPageSection.pointSystem.title:
-            print("go to pointSystem")
+            nextView = AnyView(UserInfoView())
         case MyPageSection.inquiry.title:
-            print("go to inquiry")
+            nextView = AnyView(MyPagePointView(nickname: "스리", point: 500))
         case MyPageSection.logout.title:
-            print("go to logout")
+            nextView = AnyView(MyPageSectionView())
         default:
             print("default")
         }
+        navigateToNextView = true
     }
 }
