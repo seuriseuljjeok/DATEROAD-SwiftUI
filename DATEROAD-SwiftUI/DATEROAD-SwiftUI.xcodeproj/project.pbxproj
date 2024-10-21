@@ -20,6 +20,14 @@
 		CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897132CC28239005315B1 /* StringLiterals.swift */; };
 		CA6897182CC284C6005315B1 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CA6897172CC284C6005315B1 /* Development.xcconfig */; };
 		CA68971A2CC287A3005315B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897192CC287A3005315B1 /* Config.swift */; };
+		CA6897242CC54FB0005315B1 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897232CC54FB0005315B1 /* MyPageView.swift */; };
+		CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897252CC5513B005315B1 /* ViewModifier+.swift */; };
+		CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897282CC56264005315B1 /* MyPageModel.swift */; };
+		CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68972D2CC573AF005315B1 /* TendencyTag.swift */; };
+		CA6897322CC6411F005315B1 /* Shape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897312CC6411F005315B1 /* Shape+.swift */; };
+		CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897332CC64446005315B1 /* MyPageSection.swift */; };
+		CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897352CC65382005315B1 /* UserInfoView.swift */; };
+		CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897372CC653C2005315B1 /* MyPageSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		CA6897132CC28239005315B1 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		CA6897172CC284C6005315B1 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		CA6897192CC287A3005315B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CA6897232CC54FB0005315B1 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		CA6897252CC5513B005315B1 /* ViewModifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier+.swift"; sourceTree = "<group>"; };
+		CA6897282CC56264005315B1 /* MyPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageModel.swift; sourceTree = "<group>"; };
+		CA68972D2CC573AF005315B1 /* TendencyTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendencyTag.swift; sourceTree = "<group>"; };
+		CA6897312CC6411F005315B1 /* Shape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+.swift"; sourceTree = "<group>"; };
+		CA6897332CC64446005315B1 /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
+		CA6897352CC65382005315B1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		CA6897372CC653C2005315B1 /* MyPageSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +106,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897212CC54F8A005315B1 /* MyPage */,
 				CA6896FD2CC26DE1005315B1 /* Login */,
 			);
 			path = Presentation;
@@ -130,6 +147,7 @@
 		CA6897012CC26F37005315B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CA68972C2CC573A0005315B1 /* Enum */,
 				CA6897152CC28479005315B1 /* Setting */,
 				CA6897122CC2820E005315B1 /* Literal */,
 				CA68970E2CC27EAD005315B1 /* Extension */,
@@ -163,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				CA68970F2CC27EC1005315B1 /* Font+.swift */,
+				CA6897252CC5513B005315B1 /* ViewModifier+.swift */,
+				CA6897312CC6411F005315B1 /* Shape+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +210,42 @@
 				CA6897192CC287A3005315B1 /* Config.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CA6897212CC54F8A005315B1 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897272CC56256005315B1 /* Model */,
+				CA6897222CC54F9F005315B1 /* View */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		CA6897222CC54F9F005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897232CC54FB0005315B1 /* MyPageView.swift */,
+				CA6897352CC65382005315B1 /* UserInfoView.swift */,
+				CA6897372CC653C2005315B1 /* MyPageSectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6897272CC56256005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897282CC56264005315B1 /* MyPageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA68972C2CC573A0005315B1 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				CA68972D2CC573AF005315B1 /* TendencyTag.swift */,
+				CA6897332CC64446005315B1 /* MyPageSection.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +327,16 @@
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
+				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
+				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
+				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
+				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
+				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
+				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
+				CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */,
+				CA6897242CC54FB0005315B1 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
