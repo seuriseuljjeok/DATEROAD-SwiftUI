@@ -28,7 +28,7 @@ struct MyPageView: View {
                         .padding(.top, -16)
                     Spacer()
                 }
-                .customNavigationBar(hasIcon: false, hasTitle: true, title: NAVBAR.MYPAGE)
+                .customNavigationBar(hasLeftIcon: false, hasLeftTitle: true, title: NAVBAR.MYPAGE)
             }
         }
     }

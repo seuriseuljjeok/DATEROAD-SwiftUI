@@ -10,11 +10,15 @@ import SwiftUI
 // 공통 네비게이션 바 스타일 Modifier
 struct CustomNavigationBarModifier: ViewModifier {
     
-    var hasIcon: Bool = false
+    var hasLeftIcon: Bool = false
     
-    var hasTitle: Bool = true
+    var hasLeftTitle: Bool = false
+    
+    var hasCenterTitle: Bool = false
     
     var title: String = "Default Title"
+    
+    var leftIconAction: (() -> Void)? = nil
     
     
     func body(content: Content) -> some View {
@@ -23,20 +27,32 @@ struct CustomNavigationBarModifier: ViewModifier {
             .toolbar {
                 // 좌측 아이콘이 있는 경우
                 ToolbarItem(placement: .navigationBarLeading) {
-                    if hasIcon {
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .frame(width: 24, height: 24)
+                    if hasLeftIcon {
+                        Button(action: {
+                            leftIconAction?()
+                        }) {
+                            Image(.icBack)
+                        }
                     }
                 }
                 
                 // 왼쪽 타이틀이 있는 경우
                 ToolbarItem(placement: .navigationBarLeading) {
-                    if hasTitle {
+                    if hasLeftTitle {
                         Text(title)
                             .font(.suit(.title_bold_20))
                             .foregroundColor(.black000)
                             .frame(height: 54, alignment: .center)
+                    }
+                }
+                
+                // 중앙 타이틀이 있는 경우
+                ToolbarItem(placement: .principal) {
+                    if hasCenterTitle {
+                        Text(title)
+                            .font(.suit(.title_bold_18))
+                            .foregroundColor(.black000)
+                            .frame(maxWidth: .infinity, minHeight: 54, alignment: .center)
                     }
                 }
             }
@@ -45,8 +61,17 @@ struct CustomNavigationBarModifier: ViewModifier {
 
 extension View {
     
-    func customNavigationBar(hasIcon: Bool = false, hasTitle: Bool = true, title: String = "Default Title") -> some View {
-        self.modifier(CustomNavigationBarModifier(hasIcon: hasIcon, hasTitle: hasTitle, title: title))
+    func customNavigationBar(hasLeftIcon: Bool = false, 
+                             hasLeftTitle: Bool = false,
+                             hasCenterTitle: Bool = false,
+                             title: String = "Default Title",
+                             leftIconAction: (() -> Void)? = nil
+    ) -> some View {
+        self.modifier(CustomNavigationBarModifier(hasLeftIcon: hasLeftIcon,
+                                                  hasLeftTitle: hasLeftTitle,
+                                                  hasCenterTitle: hasCenterTitle, 
+                                                  title: title,
+                                                  leftIconAction: leftIconAction))
     }
     
 }

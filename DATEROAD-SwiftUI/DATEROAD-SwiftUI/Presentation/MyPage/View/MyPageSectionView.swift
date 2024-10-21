@@ -79,7 +79,7 @@ struct MyPageSectionItem: View {
         case MyPageSection.myCourse.title:
             nextView = AnyView(LoginView())
         case MyPageSection.pointSystem.title:
-            nextView = AnyView(UserInfoView())
+            nextView = AnyView(PointSystemView().navigationBarBackButtonHidden())
         case MyPageSection.inquiry.title:
             nextView = AnyView(MyPagePointView(nickname: "스리", point: 500))
         case MyPageSection.logout.title:

@@ -28,6 +28,8 @@
 		CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897332CC64446005315B1 /* MyPageSection.swift */; };
 		CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897352CC65382005315B1 /* UserInfoView.swift */; };
 		CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897372CC653C2005315B1 /* MyPageSectionView.swift */; };
+		CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897392CC686D2005315B1 /* PointSystemView.swift */; };
+		CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68973E2CC68846005315B1 /* PointSystemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		CA6897332CC64446005315B1 /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
 		CA6897352CC65382005315B1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		CA6897372CC653C2005315B1 /* MyPageSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionView.swift; sourceTree = "<group>"; };
+		CA6897392CC686D2005315B1 /* PointSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemView.swift; sourceTree = "<group>"; };
+		CA68973E2CC68846005315B1 /* PointSystemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA68973B2CC687FF005315B1 /* PointSystem */,
 				CA6897212CC54F8A005315B1 /* MyPage */,
 				CA6896FD2CC26DE1005315B1 /* Login */,
 			);
@@ -248,6 +253,31 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		CA68973B2CC687FF005315B1 /* PointSystem */ = {
+			isa = PBXGroup;
+			children = (
+				CA68973D2CC68811005315B1 /* Model */,
+				CA68973C2CC6880B005315B1 /* View */,
+			);
+			path = PointSystem;
+			sourceTree = "<group>";
+		};
+		CA68973C2CC6880B005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897392CC686D2005315B1 /* PointSystemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA68973D2CC68811005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA68973E2CC68846005315B1 /* PointSystemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,12 +356,14 @@
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
+				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
+				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
 				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
