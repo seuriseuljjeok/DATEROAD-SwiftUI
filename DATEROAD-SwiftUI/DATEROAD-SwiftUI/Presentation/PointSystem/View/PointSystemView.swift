@@ -34,14 +34,13 @@ struct PointSystemView: View {
             Color(.white000).ignoresSafeArea()
             VStack {
                 Text(attributedText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.suit(.title_extra_20))
-                    .padding(.vertical, 16)
+                    .setText(font: .title_extra_20,
+                             padding: EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0),
+                             lineLimit: 2)
                 Text(POINTSYSTEM.SUBTITLE)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.suit(.body_med_15))
-                    .foregroundStyle(.gray500)
-                    .padding(.bottom, 26)
+                    .setText(font: .body_med_15,
+                             textColor: .gray500,
+                             padding: EdgeInsets(top: 0, leading: 0, bottom: 26, trailing: 0))
                 ForEach(pointSystemData, id: \.self) { systemData in
                     PointSystemItem(pointSystem: systemData)
                     .padding(.bottom, 16)
@@ -71,14 +70,10 @@ struct PointSystemItem: View {
                 .padding(.leading, 12)
             VStack {
                 Text(pointSystem.mainTitle)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.suit(.body_bold_15))
-                    .foregroundStyle(.black000)
+                    .setText(font: .body_bold_15, lineLimit: 2)
                 Spacer()
                 Text(pointSystem.subTitle)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.suit(.body_med_13))
-                    .foregroundStyle(.gray500)
+                    .setText(font: .body_med_13, textColor: .gray500)
             }
             .padding(.leading, 15)
             .padding(.vertical, 14)

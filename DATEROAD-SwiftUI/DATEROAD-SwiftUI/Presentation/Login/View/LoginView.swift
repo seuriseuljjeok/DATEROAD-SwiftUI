@@ -37,9 +37,10 @@ struct LoginView: View {
                     
                 }) {
                     Text(LOGIN.APPLE_LOGIN)
-                        .frame(maxWidth: .infinity, minHeight: 45, alignment: .center)
-                        .font(.suit(.body_bold_15))
-                        .foregroundStyle(.white000)
+                        .setText(maxHeight: 45,
+                                 alignment: .center,
+                                 font: .body_bold_15,
+                                 textColor: .white000)
                         .background(.black000)
                         .cornerRadius(6)
                         .padding(.horizontal, 37) // 버튼의 좌우 여백 설정

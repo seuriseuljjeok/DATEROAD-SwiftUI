@@ -31,9 +31,10 @@ struct MyPageSectionView: View {
                 HStack {
                     Spacer()
                     Text(MYPAGE.WITHDRAWAL)
-                        .font(.suit(.body_med_13))
-                        .foregroundStyle(.gray400)
-                        .padding(.trailing, 20)
+                        .setText(alignment: .trailing, 
+                                 font: .body_med_13,
+                                 textColor: .gray400,
+                                 padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
                 }
             }
             Spacer().frame(height: 36)

@@ -68,11 +68,9 @@ struct MyPagePointView: View {
     var body: some View {
         VStack(spacing: 11) {
             Text("\(nickname)님의 포인트")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.suit(.body_med_13))
-                .foregroundStyle(.gray400)
-                .padding(.leading, 14)
-                .padding(.top, 18)
+                .setText(font: .body_med_13,
+                         textColor: .gray400,
+                         padding: EdgeInsets(top: 18, leading: 14, bottom: 0, trailing: 0))
             HStack(spacing: 0) {
                 Text("\(point) P")
                     .font(.suit(.title_extra_24))
