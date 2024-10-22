@@ -70,3 +70,9 @@ enum POINTSYSTEM {
     static let DATECOURSE = "데이트 코스"
     
 }
+
+enum MYCOURSE {
+    
+    static let MYREGISTEREDCOURSE = "내가 등록한 코스"
+    
+}

@@ -8,6 +8,46 @@
 import SwiftUI
 
 struct MyRegisteredCourse: View {
+    
+    @State private var courseData: [CourseModel] = CourseModel.dummyData
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    var body: some View {
+        List(courseData, id: \.self) { course in
+            CourseView(course: course)
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(.zero))
+                .padding(.trailing, 21)
+        }
+        .listStyle(.plain)
+        .customNavigationBar(hasLeftIcon: true,
+                             hasCenterTitle: true,
+                             title: MYCOURSE.MYREGISTEREDCOURSE,
+                             leftIconAction: {
+            presentationMode.wrappedValue.dismiss()
+        })
+        .padding(.leading, 16)
+    }
+    
+}
+
+struct CourseView: View {
+    
+    var course: CourseModel
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            CourseThumbnailView(courseThumbnail: course.thumbnail, courseLike: course.like)
+            CourseInfoView(courseLocation: course.city,
+                           courseTitle: course.title,
+                           courseCost: course.cost,
+                           courseTime: course.duration)
+        }
+        .frame(height: 140)
+    }
+    
+}
 
 struct CourseThumbnailView: View {
     

@@ -52,7 +52,7 @@ struct CustomNavigationBarModifier: ViewModifier {
                         Text(title)
                             .font(.suit(.title_bold_18))
                             .foregroundColor(.black000)
-                            .frame(maxWidth: .infinity, minHeight: 54, alignment: .center)
+                            .frame(minHeight: 54, alignment: .center)
                     }
                 }
             }

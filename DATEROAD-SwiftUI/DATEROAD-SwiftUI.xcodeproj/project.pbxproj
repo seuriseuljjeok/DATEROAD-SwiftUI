@@ -30,6 +30,10 @@
 		CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897372CC653C2005315B1 /* MyPageSectionView.swift */; };
 		CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897392CC686D2005315B1 /* PointSystemView.swift */; };
 		CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68973E2CC68846005315B1 /* PointSystemModel.swift */; };
+		CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */; };
+		CA6897462CC7BBC4005315B1 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897452CC7BBC4005315B1 /* CourseModel.swift */; };
+		CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */; };
+		CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974A2CC7E51F005315B1 /* Text+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		CA6897372CC653C2005315B1 /* MyPageSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionView.swift; sourceTree = "<group>"; };
 		CA6897392CC686D2005315B1 /* PointSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemView.swift; sourceTree = "<group>"; };
 		CA68973E2CC68846005315B1 /* PointSystemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemModel.swift; sourceTree = "<group>"; };
+		CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRegisteredCourse.swift; sourceTree = "<group>"; };
+		CA6897452CC7BBC4005315B1 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTitleView.swift; sourceTree = "<group>"; };
+		CA68974A2CC7E51F005315B1 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897402CC7BAE8005315B1 /* MyCourse */,
 				CA68973B2CC687FF005315B1 /* PointSystem */,
 				CA6897212CC54F8A005315B1 /* MyPage */,
 				CA6896FD2CC26DE1005315B1 /* Login */,
@@ -152,6 +161,7 @@
 		CA6897012CC26F37005315B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897472CC7E4BD005315B1 /* Component */,
 				CA68972C2CC573A0005315B1 /* Enum */,
 				CA6897152CC28479005315B1 /* Setting */,
 				CA6897122CC2820E005315B1 /* Literal */,
@@ -188,6 +198,7 @@
 				CA68970F2CC27EC1005315B1 /* Font+.swift */,
 				CA6897252CC5513B005315B1 /* ViewModifier+.swift */,
 				CA6897312CC6411F005315B1 /* Shape+.swift */,
+				CA68974A2CC7E51F005315B1 /* Text+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,6 +289,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CA6897402CC7BAE8005315B1 /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897442CC7BBA6005315B1 /* Model */,
+				CA6897412CC7BAEF005315B1 /* View */,
+			);
+			path = MyCourse;
+			sourceTree = "<group>";
+		};
+		CA6897412CC7BAEF005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6897442CC7BBA6005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897452CC7BBC4005315B1 /* CourseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA6897472CC7E4BD005315B1 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,13 +399,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
+				CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */,
+				CA6897462CC7BBC4005315B1 /* CourseModel.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
+				CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */,
 				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
+				CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */,
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
