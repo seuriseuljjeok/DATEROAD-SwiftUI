@@ -76,3 +76,9 @@ enum MYCOURSE {
     static let MYREGISTEREDCOURSE = "내가 등록한 코스"
     
 }
+
+enum EMPTY {
+    
+    static let MYREGISTEREDCOURSE = "아직 등록한 코스가 없어요!"
+    
+}
