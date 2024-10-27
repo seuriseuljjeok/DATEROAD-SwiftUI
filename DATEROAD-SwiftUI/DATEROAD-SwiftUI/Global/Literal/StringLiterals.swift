@@ -82,3 +82,9 @@ enum EMPTY {
     static let MYREGISTEREDCOURSE = "아직 등록한 코스가 없어요!"
     
 }
+
+enum WEBVIEW {
+    
+    static let INQUIRY_URL = "https://dateroad.notion.site/1055d2f7bfe94b3fa6c03709448def21?pvs=4"
+    
+}
