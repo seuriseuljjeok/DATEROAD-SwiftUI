@@ -35,6 +35,7 @@
 		CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */; };
 		CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974A2CC7E51F005315B1 /* Text+.swift */; };
 		CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */; };
+		CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897512CCE385F005315B1 /* DRWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTitleView.swift; sourceTree = "<group>"; };
 		CA68974A2CC7E51F005315B1 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
 		CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DREmptyView.swift; sourceTree = "<group>"; };
+		CA6897512CCE385F005315B1 /* DRWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 			children = (
 				CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */,
 				CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */,
+				CA6897512CCE385F005315B1 /* DRWebView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
+				CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */,
 				CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */,
 				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
 				CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */,
