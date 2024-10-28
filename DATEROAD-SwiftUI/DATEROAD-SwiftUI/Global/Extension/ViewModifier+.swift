@@ -106,116 +106,7 @@ struct CustomAlertModifier: ViewModifier {
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()
                 VStack {
-                    switch alertType {
-                    case .SingleButtonWithSingleTitle:
-                        Text(primaryTitle)
-                            .setText(alignment: .center,
-                                     font: .body_bold_17,
-                                     textColor: .black000, padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
-                        Spacer()
-                        Button(action: {
-                            singleButtonAction?()
-                        }) {
-                            Text(singleButtonTitle ?? "")
-                                .setText(alignment: .center,
-                                         font: .body_bold_15,
-                                         textColor: .black000)
-                        }
-                        .padding(.horizontal, 14)
-                        .padding(.bottom, 14)
-                    case .SingleButtonWithDoubleTitle:
-                        Text(primaryTitle)
-                            .setText(alignment: .center,
-                                     font: .body_bold_17,
-                                     textColor: .black000, padding: EdgeInsets(top: 23, leading: 0, bottom: 5, trailing: 0))
-                        Text(secondaryTitle ?? "")
-                            .setText(alignment: .center,
-                                     font: .body_med_13,
-                                     textColor: .black000)
-                        Spacer()
-                        Button(action: {
-                            singleButtonAction?()
-                        }) {
-                            Text(singleButtonTitle ?? "")
-                                .setText(alignment: .center,
-                                         font: .body_bold_15,
-                                         textColor: .black000)
-                        }
-                        .padding(.horizontal, 14)
-                        .padding(.bottom, 14)
-                    case .DoubleButtonWithSingleTitle:
-                        Text(primaryTitle)
-                            .setText(alignment: .center,
-                                     font: .body_bold_17,
-                                     textColor: .black000, padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
-                        Spacer()
-                        HStack {
-                            Button(action: {
-                                leftButtonAction?()
-                            }) {
-                                Text(leftButtonTitle ?? "")
-                                    .setText(alignment: .center,
-                                             font: .body_bold_15,
-                                             textColor: .gray400)
-                            }
-                            .frame(width: 152,height: 48)
-                            .background(.gray100)
-                            .foregroundStyle(.gray400)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                            Button(action: {
-                                rightButtonAction?()
-                            }) {
-                                Text(rightButtonTitle ?? "")
-                                    .setText(alignment: .center,
-                                             font: .body_bold_15,
-                                             textColor: .white000)
-                            }
-                            .frame(width: 152,height: 48)
-                            .background(.purple600)
-                            .foregroundStyle(.white000)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                        }
-                        .padding(.horizontal, 14)
-                        .padding(.bottom, 14)
-                    case .DoubleButtonWithDoubleTitle:
-                        Text(primaryTitle)
-                            .setText(alignment: .center,
-                                     font: .body_bold_17,
-                                     textColor: .black000, padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        Text(secondaryTitle ?? "")
-                            .font(.suit(.body_med_13))
-                            .foregroundStyle(.black000)
-                        HStack {
-                            Button(action: {
-                                leftButtonAction?()
-                            }) {
-                                Text(leftButtonTitle ?? "")
-                                    .setText(alignment: .center,
-                                             font: .body_bold_15,
-                                             textColor: .gray400)
-                            }
-                            .frame(width: 152, height: 48)
-                            .background(.gray100)
-                            .foregroundStyle(.gray400)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding(EdgeInsets(top: 0, leading: 14, bottom: 14, trailing: 0))
-                            Spacer()
-                            Button(action: {
-                                rightButtonAction?()
-                            }) {
-                                Text(rightButtonTitle ?? "")
-                                    .setText(alignment: .center,
-                                             font: .body_bold_15,
-                                             textColor: .white000)
-                            }
-                            .frame(width: 152, height: 48)
-                            .background(.purple600)
-                            .foregroundStyle(.white000)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 14, trailing: 14))
-                        }
-                    }
+                    alertContent()
                 }
                 .frame(height: 162)
                 .background(.white000)
@@ -224,6 +115,57 @@ struct CustomAlertModifier: ViewModifier {
             }
         }
     }
+    
+    @ViewBuilder
+    private func alertContent() -> some View {
+        Text(primaryTitle)
+            .setText(alignment: .center, 
+                     font: .body_bold_17,
+                     textColor: .black000,
+                     padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
+        
+        if let secondaryTitle = secondaryTitle {
+            Text(secondaryTitle)
+                .setText(alignment: .center, font: .body_med_13, textColor: .black000)
+                .padding(.top, 5)
+        }
+        
+        Spacer()
+        
+        switch alertType {
+        case .SingleButtonWithSingleTitle, .SingleButtonWithDoubleTitle:
+            actionButton(title: singleButtonTitle ?? "", action: singleButtonAction)
+                .padding(EdgeInsets(top: 0, leading: 14, bottom: 14, trailing: 14))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+        case .DoubleButtonWithSingleTitle, .DoubleButtonWithDoubleTitle:
+            doubleActionButtons()
+        }
+    }
+    
+    private func actionButton(title: String, action: (() -> Void)?, textColor: Color = .black000) -> some View {
+        Button(action: {
+            action?()
+        }) {
+            Text(title)
+                .setText(alignment: .center, font: .body_bold_15, textColor: textColor)
+        }
+    }
+    
+    private func doubleActionButtons() -> some View {
+        HStack {
+            actionButton(title: leftButtonTitle ?? "", action: leftButtonAction, textColor: .gray400)
+                .frame(width: 152, height: 48)
+                .background(.gray100)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            Spacer()
+            actionButton(title: rightButtonTitle ?? "", action: rightButtonAction, textColor: .white000)
+                .frame(width: 152, height: 48)
+                .background(.purple600)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+        }
+        .padding(EdgeInsets(top: 0, leading: 14, bottom: 14, trailing: 14))
+    }
+    
 }
 
 extension View {
