@@ -118,16 +118,15 @@ struct CustomAlertModifier: ViewModifier {
     
     @ViewBuilder
     private func alertContent() -> some View {
-        Text(primaryTitle)
-            .setText(alignment: .center, 
-                     font: .body_bold_17,
-                     textColor: .black000,
-                     padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
+        switch alertType {
+        case .SingleButtonWithSingleTitle, .DoubleButtonWithSingleTitle:
+            title(title: primaryTitle)
+        case .SingleButtonWithDoubleTitle, .DoubleButtonWithDoubleTitle:
+            title(title: primaryTitle, padding: EdgeInsets(top: 23, leading: 0, bottom: 5, trailing: 0))
+        }
         
         if let secondaryTitle = secondaryTitle {
-            Text(secondaryTitle)
-                .setText(alignment: .center, font: .body_med_13, textColor: .black000)
-                .padding(.top, 5)
+            title(title: secondaryTitle, font: .body_med_13, padding: EdgeInsets(.zero))
         }
         
         Spacer()
@@ -140,6 +139,14 @@ struct CustomAlertModifier: ViewModifier {
         case .DoubleButtonWithSingleTitle, .DoubleButtonWithDoubleTitle:
             doubleActionButtons()
         }
+    }
+    
+    private func title(title: String, font: FontName = .body_bold_17, padding: EdgeInsets = EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0)) -> some View {
+        Text(title)
+            .setText(alignment: .center,
+                     font: font,
+                     textColor: .black000,
+                     padding: padding)
     }
     
     private func actionButton(title: String, action: (() -> Void)?, textColor: Color = .black000) -> some View {
