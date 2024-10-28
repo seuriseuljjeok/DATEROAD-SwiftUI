@@ -88,3 +88,15 @@ enum WEBVIEW {
     static let INQUIRY_URL = "https://dateroad.notion.site/1055d2f7bfe94b3fa6c03709448def21?pvs=4"
     
 }
+
+enum ALERT {
+    
+    static let CONFIRM = "확인했어요"
+    
+    static let CANCEL = "취소"
+    
+    static let LOGOUT = "로그아웃"
+    
+    static let LOGOUT_PRIMARY_TITLE = "로그아웃 하시겠어요?"
+    
+}

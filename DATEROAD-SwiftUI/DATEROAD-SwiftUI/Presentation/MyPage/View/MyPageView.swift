@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyPageView: View {
     
+    @State private var showLogoutAlert: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -23,12 +25,25 @@ struct MyPageView: View {
                         .background(.gray100, ignoresSafeAreaEdges: .all)
                         .clipShape(RoundedCornerShape(corners: [.bottomLeft, .bottomRight], radius: 14))
                         .zIndex(1)
-                    MyPageSectionView()
+                    MyPageSectionView(showLogoutAlert: $showLogoutAlert)
                         .zIndex(0)
                         .padding(.top, -16)
                     Spacer()
                 }
                 .customNavigationBar(hasLeftIcon: false, hasLeftTitle: true, title: NAVBAR.MYPAGE)
+                .customAlert(showAlert: $showLogoutAlert,
+                             alertType: .DoubleButtonWithSingleTitle,
+                             primaryTitle: ALERT.LOGOUT_PRIMARY_TITLE,
+                             rightButtonTitle: ALERT.LOGOUT,
+                             leftButtonTitle: ALERT.CANCEL,
+                             rightButtonAction: {
+                    // TODO: - 추후 서버 통신으로 변경
+                    print("로그아웃!")
+                },
+                             leftButtonAction: {
+                    showLogoutAlert = false
+                    //             presentationMode.wrappedValue.dismiss()
+                })
             }
         }
     }

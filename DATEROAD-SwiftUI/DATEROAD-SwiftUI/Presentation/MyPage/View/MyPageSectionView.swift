@@ -9,18 +9,21 @@ import SwiftUI
 
 struct MyPageSectionView: View {
     
+    // 부모 뷰 (MyPageView)에서 전달받은 상태 변수
+    @Binding var showLogoutAlert: Bool
+    
     let sections = MyPageSection.dataSource
 
     var body: some View {
         VStack(spacing: 0) {
             ForEach(sections, id: \.self) { section in
                 if section == MyPageSection.myCourse {
-                    MyPageSectionItem(title: section.title)
+                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert)
                         .frame(height: 60)
                         .padding(.top, 16)
                         .background(Color.white)
                 } else {
-                    MyPageSectionItem(title: section.title)
+                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert)
                         .frame(height: 60)
                 }
             }
@@ -50,6 +53,9 @@ struct MyPageSectionItem: View {
     
     @State private var navigateToNextView: Bool = false
     
+    // 부모 (MyPageSectionView)에서 전달받은 알럿 상태 변수
+    @Binding var showLogoutAlert: Bool
+    
     @State private var nextView: AnyView?
     
     var body: some View {
@@ -72,6 +78,9 @@ struct MyPageSectionItem: View {
             )
             .hidden()
         )
+        .transaction { transaction in
+            transaction.disablesAnimations = true
+        }
         .padding(.horizontal, 16)
     }
     
@@ -79,15 +88,17 @@ struct MyPageSectionItem: View {
         switch section {
         case MyPageSection.myCourse.title:
             nextView = AnyView(MyRegisteredCourse().navigationBarBackButtonHidden())
+            navigateToNextView = true
         case MyPageSection.pointSystem.title:
             nextView = AnyView(PointSystemView().navigationBarBackButtonHidden())
+            navigateToNextView = true
         case MyPageSection.inquiry.title:
             nextView = AnyView(DRWebView(urlString: WEBVIEW.INQUIRY_URL))
+            navigateToNextView = true
         case MyPageSection.logout.title:
-            nextView = AnyView(MyPageSectionView())
+            showLogoutAlert = true
         default:
             print("default")
         }
-        navigateToNextView = true
     }
 }
