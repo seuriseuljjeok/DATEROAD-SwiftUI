@@ -98,5 +98,11 @@ enum ALERT {
     static let LOGOUT = "로그아웃"
     
     static let LOGOUT_PRIMARY_TITLE = "로그아웃 하시겠어요?"
-    
+
+    static let WITHDRAWAL_PRIMARY_TITLE = "정말로 탈퇴하시겠어요?"
+
+    static let WITHDRAWAL_SECONDARY_TITLE = "삭제된 계정은 복구하실 수 없어요"
+
+    static let WITHDRAWAL = "탈퇴"
+
 }

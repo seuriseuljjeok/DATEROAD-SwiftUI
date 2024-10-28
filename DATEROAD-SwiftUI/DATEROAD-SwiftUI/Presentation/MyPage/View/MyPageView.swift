@@ -11,6 +11,10 @@ struct MyPageView: View {
     
     @State private var showLogoutAlert: Bool = false
     
+    @State private var showWithDrawalAlert: Bool = false
+    
+    @State private var isLogout: Bool = true
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,29 +24,36 @@ struct MyPageView: View {
                     Spacer()
                         .frame(height: 16)
                     UserInfoView()
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
+                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                         .background(.gray100, ignoresSafeAreaEdges: .all)
                         .clipShape(RoundedCornerShape(corners: [.bottomLeft, .bottomRight], radius: 14))
                         .zIndex(1)
-                    MyPageSectionView(showLogoutAlert: $showLogoutAlert)
+                    MyPageSectionView(showLogoutAlert: $showLogoutAlert,showWithDrawalAlert: $showWithDrawalAlert, isLogout: $isLogout)
                         .zIndex(0)
                         .padding(.top, -16)
                     Spacer()
                 }
                 .customNavigationBar(hasLeftIcon: false, hasLeftTitle: true, title: NAVBAR.MYPAGE)
-                .customAlert(showAlert: $showLogoutAlert,
-                             alertType: .DoubleButtonWithSingleTitle,
-                             primaryTitle: ALERT.LOGOUT_PRIMARY_TITLE,
-                             rightButtonTitle: ALERT.LOGOUT,
-                             leftButtonTitle: ALERT.CANCEL,
+                .customAlert(showAlert: isLogout ? $showLogoutAlert : $showWithDrawalAlert,
+                             alertType: isLogout ? .DoubleButtonWithSingleTitle : .DoubleButtonWithDoubleTitle,
+                             primaryTitle: isLogout ? ALERT.LOGOUT_PRIMARY_TITLE : ALERT.WITHDRAWAL_PRIMARY_TITLE,
+                             secondaryTitle: isLogout ? nil : ALERT.WITHDRAWAL_SECONDARY_TITLE,
+                             rightButtonTitle: isLogout ? ALERT.LOGOUT : ALERT.CANCEL,
+                             leftButtonTitle: isLogout ? ALERT.CANCEL : ALERT.WITHDRAWAL,
                              rightButtonAction: {
                     // TODO: - 추후 서버 통신으로 변경
-                    print("로그아웃!")
+                    if isLogout {
+                        print("로그아웃!")
+                    } else {
+                        showWithDrawalAlert = false
+                    }
                 },
                              leftButtonAction: {
-                    showLogoutAlert = false
-                    //             presentationMode.wrappedValue.dismiss()
+                    if isLogout {
+                        showLogoutAlert = false
+                    } else {
+                        print("탈퇴!")
+                    }
                 })
             }
         }
