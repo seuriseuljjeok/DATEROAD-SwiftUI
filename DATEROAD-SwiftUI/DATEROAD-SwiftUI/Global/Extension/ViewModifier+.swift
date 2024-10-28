@@ -61,7 +61,7 @@ struct CustomNavigationBarModifier: ViewModifier {
 
 extension View {
     
-    func customNavigationBar(hasLeftIcon: Bool = false, 
+    func customNavigationBar(hasLeftIcon: Bool = false,
                              hasLeftTitle: Bool = false,
                              hasCenterTitle: Bool = false,
                              title: String = "Default Title",
@@ -69,9 +69,185 @@ extension View {
     ) -> some View {
         self.modifier(CustomNavigationBarModifier(hasLeftIcon: hasLeftIcon,
                                                   hasLeftTitle: hasLeftTitle,
-                                                  hasCenterTitle: hasCenterTitle, 
+                                                  hasCenterTitle: hasCenterTitle,
                                                   title: title,
                                                   leftIconAction: leftIconAction))
+    }
+    
+}
+
+// 공통 알럿 스타일 modifier
+struct CustomAlertModifier: ViewModifier {
+    
+    @Binding var showAlert: Bool
+    
+    var alertType: AlertType
+    
+    var primaryTitle: String
+    
+    var secondaryTitle: String? = nil
+    
+    var rightButtonTitle: String? = nil
+    
+    var leftButtonTitle: String? = nil
+    
+    var singleButtonTitle: String? = nil
+    
+    var rightButtonAction: (() -> Void)? = nil
+    
+    var leftButtonAction: (() -> Void)? = nil
+    
+    var singleButtonAction: (() -> Void)? = nil
+    
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+            if showAlert {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                VStack {
+                    switch alertType {
+                    case .SingleButtonWithSingleTitle:
+                        Text(primaryTitle)
+                            .setText(alignment: .center,
+                                     font: .body_bold_17,
+                                     textColor: .black000, padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
+                        Spacer()
+                        Button(action: {
+                            singleButtonAction?()
+                        }) {
+                            Text(singleButtonTitle ?? "")
+                                .setText(alignment: .center,
+                                         font: .body_bold_15,
+                                         textColor: .black000)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.bottom, 14)
+                    case .SingleButtonWithDoubleTitle:
+                        Text(primaryTitle)
+                            .setText(alignment: .center,
+                                     font: .body_bold_17,
+                                     textColor: .black000, padding: EdgeInsets(top: 23, leading: 0, bottom: 5, trailing: 0))
+                        Text(secondaryTitle ?? "")
+                            .setText(alignment: .center,
+                                     font: .body_med_13,
+                                     textColor: .black000)
+                        Spacer()
+                        Button(action: {
+                            singleButtonAction?()
+                        }) {
+                            Text(singleButtonTitle ?? "")
+                                .setText(alignment: .center,
+                                         font: .body_bold_15,
+                                         textColor: .black000)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.bottom, 14)
+                    case .DoubleButtonWithSingleTitle:
+                        Text(primaryTitle)
+                            .setText(alignment: .center,
+                                     font: .body_bold_17,
+                                     textColor: .black000, padding: EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0))
+                        Spacer()
+                        HStack {
+                            Button(action: {
+                                leftButtonAction?()
+                            }) {
+                                Text(leftButtonTitle ?? "")
+                                    .setText(alignment: .center,
+                                             font: .body_bold_15,
+                                             textColor: .gray400)
+                            }
+                            .frame(width: 152,height: 48)
+                            .background(.gray100)
+                            .foregroundStyle(.gray400)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
+                            Button(action: {
+                                rightButtonAction?()
+                            }) {
+                                Text(rightButtonTitle ?? "")
+                                    .setText(alignment: .center,
+                                             font: .body_bold_15,
+                                             textColor: .white000)
+                            }
+                            .frame(width: 152,height: 48)
+                            .background(.purple600)
+                            .foregroundStyle(.white000)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.bottom, 14)
+                    case .DoubleButtonWithDoubleTitle:
+                        Text(primaryTitle)
+                            .setText(alignment: .center,
+                                     font: .body_bold_17,
+                                     textColor: .black000, padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        Text(secondaryTitle ?? "")
+                            .font(.suit(.body_med_13))
+                            .foregroundStyle(.black000)
+                        HStack {
+                            Button(action: {
+                                leftButtonAction?()
+                            }) {
+                                Text(leftButtonTitle ?? "")
+                                    .setText(alignment: .center,
+                                             font: .body_bold_15,
+                                             textColor: .gray400)
+                            }
+                            .frame(width: 152, height: 48)
+                            .background(.gray100)
+                            .foregroundStyle(.gray400)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding(EdgeInsets(top: 0, leading: 14, bottom: 14, trailing: 0))
+                            Spacer()
+                            Button(action: {
+                                rightButtonAction?()
+                            }) {
+                                Text(rightButtonTitle ?? "")
+                                    .setText(alignment: .center,
+                                             font: .body_bold_15,
+                                             textColor: .white000)
+                            }
+                            .frame(width: 152, height: 48)
+                            .background(.purple600)
+                            .foregroundStyle(.white000)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 14, trailing: 14))
+                        }
+                    }
+                }
+                .frame(height: 162)
+                .background(.white000)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .padding(.horizontal, 16)
+            }
+        }
+    }
+}
+
+extension View {
+    
+    func customAlert(showAlert: Binding<Bool>,
+                     alertType: AlertType,
+                     primaryTitle: String,
+                     secondaryTitle: String? = nil,
+                     rightButtonTitle: String? = ALERT.CANCEL,
+                     leftButtonTitle: String? = nil,
+                     singleButtonTitle: String? = nil,
+                     rightButtonAction: (() -> Void)? = nil,
+                     leftButtonAction: (() -> Void)? = nil,
+                     singleButtonAction: (() -> Void)? = nil
+    ) -> some View {
+        self.modifier(CustomAlertModifier(showAlert: showAlert, alertType: alertType,
+                                          primaryTitle: primaryTitle,
+                                          secondaryTitle: secondaryTitle,
+                                          rightButtonTitle: rightButtonTitle,
+                                          leftButtonTitle: leftButtonTitle,
+                                          singleButtonTitle: singleButtonTitle,
+                                          rightButtonAction: rightButtonAction,
+                                          leftButtonAction: leftButtonAction,
+                                          singleButtonAction: singleButtonAction))
     }
     
 }
