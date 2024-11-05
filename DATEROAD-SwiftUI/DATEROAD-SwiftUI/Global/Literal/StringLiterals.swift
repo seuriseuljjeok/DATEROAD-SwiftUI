@@ -111,6 +111,8 @@ enum PROFILE {
     
     static let MY_PROFILE = "내 프로필"
     
+    static let EDIT_PROFILE = "프로필 변경"
+    
     static let NICKNAME = "닉네임"
     
     static let NICKNAME_CONDITION = "(한글, 영문, 숫자만 가능)"

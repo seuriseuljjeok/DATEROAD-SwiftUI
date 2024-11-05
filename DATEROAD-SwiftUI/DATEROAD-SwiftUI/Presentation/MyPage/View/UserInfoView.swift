@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserInfoView: View {
     
+    @State private var navigateToNextView: Bool = false
+    
     @State private var tagInfoData: MyPageUserInfoModel = MyPageUserInfoModel.emptyModel
     
     var body: some View {
@@ -23,6 +25,16 @@ struct UserInfoView: View {
                     .padding(.leading, 16.5)
                 Image(.icPencil)
                     .frame(width: 20, height: 20)
+                    .onTapGesture {
+                        navigateToNextView = true
+                    }
+                NavigationLink(
+                    destination: EditProfileView().navigationBarBackButtonHidden(),
+                    isActive: $navigateToNextView,
+                    label: {
+                        EmptyView()
+                    })
+                .hidden()
                 Spacer()
             }
             
@@ -34,7 +46,8 @@ struct UserInfoView: View {
                 }
                 Spacer()
             }
-            Spacer().frame(height: 16)
+            Spacer()
+                .frame(height: 16)
             
             MyPagePointView(nickname: tagInfoData.nickname, point: tagInfoData.point)
         }
@@ -44,7 +57,7 @@ struct UserInfoView: View {
 struct TagView: View {
     
     @State var tagInfo: TendencyTag
-        
+    
     var body: some View {
         HStack {
             Image(tagInfo.tag.tagIcon)
