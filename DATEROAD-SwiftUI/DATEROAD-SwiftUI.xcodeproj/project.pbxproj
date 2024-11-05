@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C932CDA2825001792C9 /* DRChipView.swift */; };
+		CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C952CDA2A6E001792C9 /* NicknameView.swift */; };
+		CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C972CDA2A94001792C9 /* DateTendencyView.swift */; };
+		CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C992CDA2ACD001792C9 /* EditProfileView.swift */; };
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
 		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		CA524C932CDA2825001792C9 /* DRChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRChipView.swift; sourceTree = "<group>"; };
+		CA524C952CDA2A6E001792C9 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
+		CA524C972CDA2A94001792C9 /* DateTendencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTendencyView.swift; sourceTree = "<group>"; };
+		CA524C992CDA2ACD001792C9 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -349,6 +355,9 @@
 			isa = PBXGroup;
 			children = (
 				CA6897682CD28037005315B1 /* ProfileView.swift */,
+				CA524C952CDA2A6E001792C9 /* NicknameView.swift */,
+				CA524C972CDA2A94001792C9 /* DateTendencyView.swift */,
+				CA524C992CDA2ACD001792C9 /* EditProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,12 +447,15 @@
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
 				CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */,
+				CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
 				CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */,
+				CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
 				CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */,
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
+				CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */,
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
