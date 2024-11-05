@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserInfoView: View {
     
+    @State private var navigateToNextView: Bool = false
+    
     @State private var tagInfoData: MyPageUserInfoModel = MyPageUserInfoModel.emptyModel
     
     var body: some View {
@@ -23,6 +25,16 @@ struct UserInfoView: View {
                     .padding(.leading, 16.5)
                 Image(.icPencil)
                     .frame(width: 20, height: 20)
+                    .onTapGesture {
+                        navigateToNextView = true
+                    }
+                NavigationLink(
+                    destination: EditProfileView().navigationBarBackButtonHidden(),
+                    isActive: $navigateToNextView,
+                    label: {
+                        EmptyView()
+                    })
+                .hidden()
                 Spacer()
             }
             
@@ -34,7 +46,8 @@ struct UserInfoView: View {
                 }
                 Spacer()
             }
-            Spacer().frame(height: 16)
+            Spacer()
+                .frame(height: 16)
             
             MyPagePointView(nickname: tagInfoData.nickname, point: tagInfoData.point)
         }
@@ -44,10 +57,10 @@ struct UserInfoView: View {
 struct TagView: View {
     
     @State var tagInfo: TendencyTag
-        
+    
     var body: some View {
         HStack {
-            tagInfo.tag.tagIcon
+            Image(tagInfo.tag.tagIcon)
                 .frame(width: 18, height: 18)
             Text(tagInfo.tag.tagTitle)
                 .font(.suit(.body_med_13))
@@ -67,14 +80,10 @@ struct MyPagePointView: View {
     
     var body: some View {
         VStack(spacing: 11) {
-            HStack {
-                Text("\(nickname)님의 포인트")
-                    .font(.suit(.body_med_13))
-                    .foregroundStyle(.gray400)
-                    .padding(.leading, 14)
-                    .padding(.top, 18)
-                Spacer()
-            }
+            Text("\(nickname)님의 포인트")
+                .setText(font: .body_med_13,
+                         textColor: .gray400,
+                         padding: EdgeInsets(top: 18, leading: 14, bottom: 0, trailing: 0))
             HStack(spacing: 0) {
                 Text("\(point) P")
                     .font(.suit(.title_extra_24))

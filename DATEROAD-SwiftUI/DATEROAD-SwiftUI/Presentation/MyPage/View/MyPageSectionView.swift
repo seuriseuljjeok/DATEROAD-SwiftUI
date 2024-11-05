@@ -9,31 +9,39 @@ import SwiftUI
 
 struct MyPageSectionView: View {
     
+    // 부모 뷰 (MyPageView)에서 전달받은 상태 변수
+    @Binding var showLogoutAlert: Bool
+    
+    @Binding var showWithDrawalAlert: Bool
+    
+    @Binding var isLogout: Bool
+
     let sections = MyPageSection.dataSource
 
     var body: some View {
         VStack(spacing: 0) {
             ForEach(sections, id: \.self) { section in
                 if section == MyPageSection.myCourse {
-                    MyPageSectionItem(title: section.title)
+                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert, isLogout: $isLogout)
                         .frame(height: 60)
                         .padding(.top, 16)
                         .background(Color.white)
                 } else {
-                    MyPageSectionItem(title: section.title)
+                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert, isLogout: $isLogout)
                         .frame(height: 60)
                 }
             }
             Spacer()
             Button(action: {
-                
+                isLogout = false
+                showWithDrawalAlert = true
             }) {
                 HStack {
-                    Spacer()
                     Text(MYPAGE.WITHDRAWAL)
-                        .font(.suit(.body_med_13))
-                        .foregroundStyle(.gray400)
-                        .padding(.trailing, 20)
+                        .setText(alignment: .trailing, 
+                                 font: .body_med_13,
+                                 textColor: .gray400,
+                                 padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
                 }
             }
             Spacer().frame(height: 36)
@@ -46,6 +54,11 @@ struct MyPageSectionView: View {
 struct MyPageSectionItem: View {
     
     var title: String
+    
+    // 부모 (MyPageSectionView)에서 전달받은 알럿 상태 변수
+    @Binding var showLogoutAlert: Bool
+    
+    @Binding var isLogout: Bool
     
     @State private var navigateToNextView: Bool = false
     
@@ -71,22 +84,28 @@ struct MyPageSectionItem: View {
             )
             .hidden()
         )
+        .transaction { transaction in
+            transaction.disablesAnimations = true
+        }
         .padding(.horizontal, 16)
     }
     
     func goToNextView(for section: String) {
         switch section {
         case MyPageSection.myCourse.title:
-            nextView = AnyView(LoginView())
+            nextView = AnyView(MyRegisteredCourse().navigationBarBackButtonHidden())
+            navigateToNextView = true
         case MyPageSection.pointSystem.title:
-            nextView = AnyView(UserInfoView())
+            nextView = AnyView(PointSystemView().navigationBarBackButtonHidden())
+            navigateToNextView = true
         case MyPageSection.inquiry.title:
-            nextView = AnyView(MyPagePointView(nickname: "스리", point: 500))
+            nextView = AnyView(DRWebView(urlString: WEBVIEW.INQUIRY_URL))
+            navigateToNextView = true
         case MyPageSection.logout.title:
-            nextView = AnyView(MyPageSectionView())
+            isLogout = true
+            showLogoutAlert = true
         default:
             print("default")
         }
-        navigateToNextView = true
     }
 }

@@ -33,20 +33,42 @@ struct MyPageUserInfoModel {
     
 }
 
-struct TagModel {
+public protocol Chipable {
     
-    let tagIcon: Image
+    var id: UUID { get }
+    
+    var tagIcon: String { get }
+    
+    var tagTitle: String { get }
+    
+    var english: String { get }
+    
+}
+
+struct TagModel: Chipable {
+    
+    let id: UUID
+    
+    let tagIcon: String
     
     let tagTitle: String
     
     let english: String
+    
+    // 기본값으로 id를 자동 생성하도록 초기화
+    init(id: UUID = UUID(), tagIcon: String, tagTitle: String, english: String) {
+        self.id = id
+        self.tagIcon = tagIcon
+        self.tagTitle = tagTitle
+        self.english = english
+    }
     
 }
 
 extension TagModel {
     
     static var emptyTagModel: TagModel {
-        return TagModel(tagIcon: Image(.icCar), tagTitle: "드라이브", english: "DRIVE")
+        return TagModel(tagIcon: "ic_car", tagTitle: "드라이브", english: "DRIVE")
     }
     
 }

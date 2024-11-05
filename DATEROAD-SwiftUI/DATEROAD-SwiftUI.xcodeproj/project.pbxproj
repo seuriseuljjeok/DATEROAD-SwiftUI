@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C932CDA2825001792C9 /* DRChipView.swift */; };
+		CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C952CDA2A6E001792C9 /* NicknameView.swift */; };
+		CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C972CDA2A94001792C9 /* DateTendencyView.swift */; };
+		CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C992CDA2ACD001792C9 /* EditProfileView.swift */; };
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
 		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
@@ -28,9 +32,23 @@
 		CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897332CC64446005315B1 /* MyPageSection.swift */; };
 		CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897352CC65382005315B1 /* UserInfoView.swift */; };
 		CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897372CC653C2005315B1 /* MyPageSectionView.swift */; };
+		CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897392CC686D2005315B1 /* PointSystemView.swift */; };
+		CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68973E2CC68846005315B1 /* PointSystemModel.swift */; };
+		CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */; };
+		CA6897462CC7BBC4005315B1 /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897452CC7BBC4005315B1 /* CourseModel.swift */; };
+		CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */; };
+		CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974A2CC7E51F005315B1 /* Text+.swift */; };
+		CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */; };
+		CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897512CCE385F005315B1 /* DRWebView.swift */; };
+		CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897552CCE40F0005315B1 /* AlertType.swift */; };
+		CA6897692CD28037005315B1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897682CD28037005315B1 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA524C932CDA2825001792C9 /* DRChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRChipView.swift; sourceTree = "<group>"; };
+		CA524C952CDA2A6E001792C9 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
+		CA524C972CDA2A94001792C9 /* DateTendencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTendencyView.swift; sourceTree = "<group>"; };
+		CA524C992CDA2ACD001792C9 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -54,6 +72,16 @@
 		CA6897332CC64446005315B1 /* MyPageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSection.swift; sourceTree = "<group>"; };
 		CA6897352CC65382005315B1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		CA6897372CC653C2005315B1 /* MyPageSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionView.swift; sourceTree = "<group>"; };
+		CA6897392CC686D2005315B1 /* PointSystemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemView.swift; sourceTree = "<group>"; };
+		CA68973E2CC68846005315B1 /* PointSystemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointSystemModel.swift; sourceTree = "<group>"; };
+		CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRegisteredCourse.swift; sourceTree = "<group>"; };
+		CA6897452CC7BBC4005315B1 /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTitleView.swift; sourceTree = "<group>"; };
+		CA68974A2CC7E51F005315B1 /* Text+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+.swift"; sourceTree = "<group>"; };
+		CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DREmptyView.swift; sourceTree = "<group>"; };
+		CA6897512CCE385F005315B1 /* DRWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRWebView.swift; sourceTree = "<group>"; };
+		CA6897552CCE40F0005315B1 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
+		CA6897682CD28037005315B1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +134,9 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897662CD28021005315B1 /* Profile */,
+				CA6897402CC7BAE8005315B1 /* MyCourse */,
+				CA68973B2CC687FF005315B1 /* PointSystem */,
 				CA6897212CC54F8A005315B1 /* MyPage */,
 				CA6896FD2CC26DE1005315B1 /* Login */,
 			);
@@ -147,6 +178,7 @@
 		CA6897012CC26F37005315B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897472CC7E4BD005315B1 /* Component */,
 				CA68972C2CC573A0005315B1 /* Enum */,
 				CA6897152CC28479005315B1 /* Setting */,
 				CA6897122CC2820E005315B1 /* Literal */,
@@ -183,6 +215,7 @@
 				CA68970F2CC27EC1005315B1 /* Font+.swift */,
 				CA6897252CC5513B005315B1 /* ViewModifier+.swift */,
 				CA6897312CC6411F005315B1 /* Shape+.swift */,
+				CA68974A2CC7E51F005315B1 /* Text+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -244,8 +277,89 @@
 			children = (
 				CA68972D2CC573AF005315B1 /* TendencyTag.swift */,
 				CA6897332CC64446005315B1 /* MyPageSection.swift */,
+				CA6897552CCE40F0005315B1 /* AlertType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		CA68973B2CC687FF005315B1 /* PointSystem */ = {
+			isa = PBXGroup;
+			children = (
+				CA68973D2CC68811005315B1 /* Model */,
+				CA68973C2CC6880B005315B1 /* View */,
+			);
+			path = PointSystem;
+			sourceTree = "<group>";
+		};
+		CA68973C2CC6880B005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897392CC686D2005315B1 /* PointSystemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA68973D2CC68811005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA68973E2CC68846005315B1 /* PointSystemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA6897402CC7BAE8005315B1 /* MyCourse */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897442CC7BBA6005315B1 /* Model */,
+				CA6897412CC7BAEF005315B1 /* View */,
+			);
+			path = MyCourse;
+			sourceTree = "<group>";
+		};
+		CA6897412CC7BAEF005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897422CC7BB29005315B1 /* MyRegisteredCourse.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6897442CC7BBA6005315B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897452CC7BBC4005315B1 /* CourseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA6897472CC7E4BD005315B1 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */,
+				CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */,
+				CA6897512CCE385F005315B1 /* DRWebView.swift */,
+				CA524C932CDA2825001792C9 /* DRChipView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		CA6897662CD28021005315B1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897672CD2802B005315B1 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CA6897672CD2802B005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897682CD28037005315B1 /* ProfileView.swift */,
+				CA524C952CDA2A6E001792C9 /* NicknameView.swift */,
+				CA524C972CDA2A94001792C9 /* DateTendencyView.swift */,
+				CA524C992CDA2ACD001792C9 /* EditProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,15 +439,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
+				CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */,
+				CA6897462CC7BBC4005315B1 /* CourseModel.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
+				CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */,
+				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
+				CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */,
+				CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
+				CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */,
+				CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
+				CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */,
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
+				CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */,
+				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
+				CA6897692CD28037005315B1 /* ProfileView.swift in Sources */,
+				CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */,
+				CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */,
 				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
 				CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */,
 				CA6897242CC54FB0005315B1 /* MyPageView.swift in Sources */,
