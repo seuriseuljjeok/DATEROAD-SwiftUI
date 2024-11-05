@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C932CDA2825001792C9 /* DRChipView.swift */; };
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
 		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
@@ -37,9 +38,11 @@
 		CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */; };
 		CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897512CCE385F005315B1 /* DRWebView.swift */; };
 		CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897552CCE40F0005315B1 /* AlertType.swift */; };
+		CA6897692CD28037005315B1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6897682CD28037005315B1 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA524C932CDA2825001792C9 /* DRChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRChipView.swift; sourceTree = "<group>"; };
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DREmptyView.swift; sourceTree = "<group>"; };
 		CA6897512CCE385F005315B1 /* DRWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRWebView.swift; sourceTree = "<group>"; };
 		CA6897552CCE40F0005315B1 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
+		CA6897682CD28037005315B1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA6897662CD28021005315B1 /* Profile */,
 				CA6897402CC7BAE8005315B1 /* MyCourse */,
 				CA68973B2CC687FF005315B1 /* PointSystem */,
 				CA6897212CC54F8A005315B1 /* MyPage */,
@@ -327,8 +332,25 @@
 				CA6897482CC7E4D7005315B1 /* ImageWithTitleView.swift */,
 				CA68974C2CC7F4E9005315B1 /* DREmptyView.swift */,
 				CA6897512CCE385F005315B1 /* DRWebView.swift */,
+				CA524C932CDA2825001792C9 /* DRChipView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		CA6897662CD28021005315B1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897672CD2802B005315B1 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CA6897672CD2802B005315B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6897682CD28037005315B1 /* ProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +437,7 @@
 				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
+				CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
 				CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */,
@@ -424,6 +447,7 @@
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
+				CA6897692CD28037005315B1 /* ProfileView.swift in Sources */,
 				CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */,
 				CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */,
 				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
