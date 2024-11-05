@@ -47,7 +47,7 @@ struct TagView: View {
         
     var body: some View {
         HStack {
-            tagInfo.tag.tagIcon
+            Image(tagInfo.tag.tagIcon)
                 .frame(width: 18, height: 18)
             Text(tagInfo.tag.tagTitle)
                 .font(.suit(.body_med_13))
