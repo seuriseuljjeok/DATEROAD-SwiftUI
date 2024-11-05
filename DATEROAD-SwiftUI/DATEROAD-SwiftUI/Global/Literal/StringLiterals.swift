@@ -106,3 +106,33 @@ enum ALERT {
     static let WITHDRAWAL = "탈퇴"
 
 }
+
+enum PROFILE {
+    
+    static let MY_PROFILE = "내 프로필"
+    
+    static let NICKNAME = "닉네임"
+    
+    static let NICKNAME_CONDITION = "(한글, 영문, 숫자만 가능)"
+    
+    static let DOUBLE_CHECK = "중복확인"
+    
+    static let MY_TENDENCY = "나의 데이트 성향"
+    
+    static let REGISTER_PROFILE = "프로필 등록하기"
+    
+    static let TAG_COUNT_ERROR = "최소 1개, 최대 3개를 선택해주세요."
+    
+    static let NICKNAME_COUNT_ERROR = "최소 2글자를 입력해야 해요"
+
+    static let NICKNAME_USED_ERROR = "이미 사용 중인 닉네임이에요"
+    
+    static let VALID_NICKNAME = "사용 가능한 닉네임이에요"
+
+}
+
+enum PLACEHOLDER {
+    
+    static let NICKNAME = "닉네임을 입력해 주세요"
+    
+}

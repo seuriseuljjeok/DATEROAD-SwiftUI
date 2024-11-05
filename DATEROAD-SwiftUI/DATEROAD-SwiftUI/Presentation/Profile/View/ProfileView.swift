@@ -1,3 +1,51 @@
+//
+//  ProfileView.swift
+//  DATEROAD-SwiftUI
+//
+//  Created by 윤희슬 on 10/30/24.
+//
+
+import SwiftUI
+
+struct ProfileView: View {
+    
+    @State private var nickname: String = ""
+    
+    @State private var isValidNicknameCount: Bool = false
+    
+    @State private var isUnusedNickname: Bool = false
+    
+    @State private var tagCount: Int = 0
+    
+    @State private var isValidTagCount: Bool = true
+    
+    @State private var initial: Bool = false
+    
+    
+    var body: some View {
+        VStack {
+            ZStack(alignment: .bottomTrailing) {
+                Image(.emptyLargeProfile)
+                    .frame(width: 121, height: 121)
+                    .clipShape(Circle())
+                Image(.icProfileplus)
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+            }
+            .padding(.vertical, 43)
+            
+            NicknameView(
+                nickname: $nickname,
+                isValidNicknameCount: $isValidNicknameCount,
+                isUnusedNickname: $isUnusedNickname,
+                initial: $initial
+            )
+            DateTendencyView(tagCount: $tagCount, isValidTagCount: $isValidTagCount)
+        }
+        .customNavigationBar(hasCenterTitle: true, title: PROFILE.MY_PROFILE)
+    }
+}
+
 struct NicknameView: View {
     
     @Binding var nickname: String
@@ -75,6 +123,35 @@ struct NicknameView: View {
     
     func checkUnusedNickname() {
 
+    }
+}
+
+struct DateTendencyView: View {
+    
+    @Binding var tagCount: Int
+    
+    @Binding var isValidTagCount: Bool
+    
+    @State private var selectedTags: [Bool] = Array(repeating: false, count: TendencyTag.allCases.count)
+    
+    private let tagData: [TagModel] = TendencyTag.allCases.map { $0.tag }
+    
+    private let columns = [GridItem(.adaptive(minimum: 67, maximum: 100), spacing: 7)]
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Text(PROFILE.MY_TENDENCY + " (\(tagCount)/3)")
+                .setText(font: .body_bold_15, textColor: .black000)
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: 10, trailing: 16))
+            ChipView(tagCount: $tagCount, isValidTagCount: $isValidTagCount)
+                .padding(.horizontal, 16)
+            if !isValidTagCount {
+                Text(PROFILE.TAG_COUNT_ERROR)
+                    .setText(font: .cap_reg_11, textColor: .alertRed)
+                    .padding(EdgeInsets(top: 6, leading: 16, bottom: 0, trailing: 16))
+            }
+            Spacer()
+        }
     }
 }
 
