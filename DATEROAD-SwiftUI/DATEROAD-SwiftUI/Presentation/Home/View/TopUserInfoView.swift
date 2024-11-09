@@ -64,4 +64,37 @@ struct TicketView: View {
     }
 }
 
+
+
+struct EmptyTicketView: View {
+    
+    var body: some View {
+        ZStack {
+            Image(.dateSchedule)
+                .resizable(resizingMode: .stretch)
+                .frame(height: 104)
+                .padding(.horizontal, 16)
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(HOME.EMPTY_TICKET_TITLE)
+                        .setText(maxWidth: nil,
+                                 font: .title_bold_18,
+                                 textColor: .white000)
+                    Text(HOME.EMPTY_TICKET_SUBTITLE)
+                        .setText(maxWidth: nil,
+                                 font: .body_med_15,
+                                 textColor: .purple400)
+                }
+                Spacer()
+                Image(.icPlusPurple)
+                    .frame(width: 44, height: 44)
+                    .onTapGesture {
+                        // TODO: - 데이트 일정 등록으로 이동
+                    }
+            }
+            .padding(.trailing, 28)
+            .padding(.leading, 39)
+        }
+    }
+}
 }
