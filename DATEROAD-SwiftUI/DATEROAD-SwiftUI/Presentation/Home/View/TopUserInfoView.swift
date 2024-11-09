@@ -8,13 +8,42 @@
 import SwiftUI
 
 struct TopUserInfoView: View {
+    
+    @State private var point: Int = 0
+    
+    @State private var upcomingData: UpcomingDateModel? = UpcomingDateModel.emptyData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 10) {
+            HStack {
+                Image(.imgSmallLogo)
+                    .padding(.leading, 11)
+                    .frame(width: 55, height: 55)
+                Spacer()
+                ZStack(alignment: .trailing) {
+                    Text(String(point) + " P")
+                        .setText(maxWidth: nil, font: .body_bold_13, textColor: .white000, padding: EdgeInsets(top: 7, leading: 14, bottom: 7, trailing: 40))
+                    Image(.emptyProfile)
+                        .frame(width: 33, height: 33)
+                }
+                .frame(height: 33)
+                .background(.purple500)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .padding(.trailing, 16)
+            }
+            .frame(width: .infinity, height: 55)
+            if let upcomingData {
+                TicketView(upcomingData: upcomingData)
+            } else {
+                EmptyTicketView()
+            }
+            Spacer()
+        }
+        .frame(width:  .infinity, height: 206)
+        .background(.purple600)
     }
 }
 
-#Preview {
-    TopUserInfoView()
 struct TicketView: View {
     
     @State var upcomingData: UpcomingDateModel
@@ -97,4 +126,10 @@ struct EmptyTicketView: View {
         }
     }
 }
+
+
+struct TopUserInfoView_Previews: PreviewProvider {
+    static var previews: some View {
+        TopUserInfoView()
+    }
 }
