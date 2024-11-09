@@ -138,3 +138,11 @@ enum PLACEHOLDER {
     static let NICKNAME = "닉네임을 입력해 주세요"
     
 }
+
+enum HOME {
+    
+    static let EMPTY_TICKET_TITLE = "다가오는 데이트 일정이 없어요"
+    
+    static let EMPTY_TICKET_SUBTITLE = "일정을 등록하러 가볼까요?"
+    
+}
