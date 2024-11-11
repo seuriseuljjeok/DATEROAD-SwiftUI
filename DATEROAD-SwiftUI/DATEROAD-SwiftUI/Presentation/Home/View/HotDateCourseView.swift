@@ -1,3 +1,18 @@
+struct HotDateCourseListView: View {
+    
+    @Binding var hotCourseData: [DateCourseModel]
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 4) {
+                ForEach(hotCourseData, id: \.courseId) { data in
+                    HotDateCourseItem(hotCourseData: data)
+                        .padding(.leading, 16)
+                }
+            }
+        }
+    }
+}
 
 struct HotDateCourseItem: View {
     
@@ -62,3 +77,8 @@ struct HotDateCourseItem: View {
     }
 }
 
+struct HotDateCourseView_Previews: PreviewProvider {
+    static var previews: some View {
+        HotDateCourseView()
+    }
+}
