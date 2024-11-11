@@ -1,3 +1,30 @@
+//
+//  HotDateCourseView.swift
+//  DATEROAD-SwiftUI
+//
+//  Created by 윤희슬 on 11/11/24.
+//
+
+import SwiftUI
+
+struct HotDateCourseView: View {
+    
+    @State var nickname: String = "췣췣췣췣췣"
+    
+    @State var hotDateCourseData: [DateCourseModel] = DateCourseModel.emptyData
+    
+    var body: some View {
+        ZStack {
+            Color(.white000)
+                .ignoresSafeArea()
+                .clipShape(RoundedCornerShape(corners: [.topLeft, .topRight], radius: 20))
+            VStack(spacing: 0) {
+                HotDateCourseTitleView(nickname: $nickname)
+                HotDateCourseListView(hotCourseData: $hotDateCourseData)
+            }
+        }
+    }
+}
 
 struct HotDateCourseTitleView: View {
     
@@ -43,6 +70,7 @@ struct HotDateCourseTitleView: View {
         }
     }
 }
+
 struct HotDateCourseListView: View {
     
     @Binding var hotCourseData: [DateCourseModel]

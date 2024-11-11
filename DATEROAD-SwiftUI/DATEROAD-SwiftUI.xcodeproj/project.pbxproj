@@ -14,6 +14,9 @@
 		CA524CA22CDF6B2A001792C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CA12CDF6B2A001792C9 /* HomeView.swift */; };
 		CA524CA42CDF6BD5001792C9 /* TopUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CA32CDF6BD5001792C9 /* TopUserInfoView.swift */; };
 		CA524CA72CDF7499001792C9 /* UpcomingDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CA62CDF7499001792C9 /* UpcomingDateModel.swift */; };
+		CA524CA92CE1DF38001792C9 /* HotDateCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */; };
+		CA524CAB2CE1EA78001792C9 /* DateCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */; };
+		CA524CAD2CE1EC4B001792C9 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CAC2CE1EC4B001792C9 /* Int+.swift */; };
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
 		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		CA524CA12CDF6B2A001792C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CA524CA32CDF6BD5001792C9 /* TopUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUserInfoView.swift; sourceTree = "<group>"; };
 		CA524CA62CDF7499001792C9 /* UpcomingDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDateModel.swift; sourceTree = "<group>"; };
+		CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDateCourseView.swift; sourceTree = "<group>"; };
+		CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCourseModel.swift; sourceTree = "<group>"; };
+		CA524CAC2CE1EC4B001792C9 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				CA524CA12CDF6B2A001792C9 /* HomeView.swift */,
 				CA524CA32CDF6BD5001792C9 /* TopUserInfoView.swift */,
+				CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				CA524CA62CDF7499001792C9 /* UpcomingDateModel.swift */,
+				CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				CA6897252CC5513B005315B1 /* ViewModifier+.swift */,
 				CA6897312CC6411F005315B1 /* Shape+.swift */,
 				CA68974A2CC7E51F005315B1 /* Text+.swift */,
+				CA524CAC2CE1EC4B001792C9 /* Int+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -487,7 +496,9 @@
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
 				CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */,
 				CA524CA42CDF6BD5001792C9 /* TopUserInfoView.swift in Sources */,
+				CA524CAB2CE1EA78001792C9 /* DateCourseModel.swift in Sources */,
 				CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */,
+				CA524CA92CE1DF38001792C9 /* HotDateCourseView.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
 				CA6897432CC7BB29005315B1 /* MyRegisteredCourse.swift in Sources */,
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
@@ -495,6 +506,7 @@
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
+				CA524CAD2CE1EC4B001792C9 /* Int+.swift in Sources */,
 				CA6897692CD28037005315B1 /* ProfileView.swift in Sources */,
 				CA6897522CCE385F005315B1 /* DRWebView.swift in Sources */,
 				CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */,

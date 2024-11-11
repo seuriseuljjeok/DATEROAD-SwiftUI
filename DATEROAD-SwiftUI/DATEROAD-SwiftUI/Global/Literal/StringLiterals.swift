@@ -145,4 +145,22 @@ enum HOME {
     
     static let EMPTY_TICKET_SUBTITLE = "일정을 등록하러 가볼까요?"
     
+    static let HOT_DATE_TITLE = " 오늘은\n이런 데이트 어떠세요?"
+    
+    static let HOT_DATE_SUB_TITLE = "후기 보장 HOT 데이트 코스 둘러보기"
+    
+    static let GO_TO_DATE = "더보기"
+        
+}
+
+enum PRICETAG {
+    
+    static let UNDER30K = "3만원 이하"
+    
+    static let UNDER50K = "5만원 이하"
+
+    static let UNDER100K = "10만원 이하"
+
+    static let OVER100K = "10만원 초과"
+
 }
