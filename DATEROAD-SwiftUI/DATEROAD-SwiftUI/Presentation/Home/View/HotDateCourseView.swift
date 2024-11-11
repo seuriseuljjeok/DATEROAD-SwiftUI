@@ -1,3 +1,48 @@
+
+struct HotDateCourseTitleView: View {
+    
+    @Binding var nickname: String
+    
+    var attributedText: AttributedString {
+        
+        var string = AttributedString(nickname + "님," + HOME.HOT_DATE_TITLE)
+        
+        let keyword = nickname + "님,"
+        
+        if let range = string.range(of: keyword) {
+            string[range].foregroundColor = Color(.purple600)
+        }
+        
+        return string
+    }
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Text(attributedText)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: 62,
+                    alignment: .leading
+                )
+                .lineLimit(2)
+                .font(Font.system(size: 24, weight: .black))
+                .padding(.horizontal, 16)
+            HStack {
+                Text(HOME.HOT_DATE_SUB_TITLE)
+                    .setText(font: .body_med_13, textColor: .gray400)
+                Spacer()
+                Text(HOME.GO_TO_DATE)
+                    .setText(
+                        maxWidth: 35,
+                        maxHeight: 18,
+                        font: .body_bold_13,
+                        textColor: .purple500
+                    )
+            }
+            .padding(EdgeInsets(top: 6, leading: 16, bottom: 12, trailing: 20))
+        }
+    }
+}
 struct HotDateCourseListView: View {
     
     @Binding var hotCourseData: [DateCourseModel]
