@@ -17,6 +17,9 @@
 		CA524CA92CE1DF38001792C9 /* HotDateCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */; };
 		CA524CAB2CE1EA78001792C9 /* DateCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */; };
 		CA524CAD2CE1EC4B001792C9 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524CAC2CE1EC4B001792C9 /* Int+.swift */; };
+		CA5D0F272CE3AC220060B72C /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0F262CE3AC220060B72C /* BannerView.swift */; };
+		CA5D0F292CE3ADBA0060B72C /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0F282CE3ADBA0060B72C /* BannerModel.swift */; };
+		CA5D0F2B2CE4CB7B0060B72C /* NewDateCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D0F2A2CE4CB7B0060B72C /* NewDateCourseView.swift */; };
 		CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */; };
 		CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6896EE2CC26B55005315B1 /* LoginView.swift */; };
 		CA6896F12CC26B56005315B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6896F02CC26B56005315B1 /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDateCourseView.swift; sourceTree = "<group>"; };
 		CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCourseModel.swift; sourceTree = "<group>"; };
 		CA524CAC2CE1EC4B001792C9 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		CA5D0F262CE3AC220060B72C /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		CA5D0F282CE3ADBA0060B72C /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		CA5D0F2A2CE4CB7B0060B72C /* NewDateCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDateCourseView.swift; sourceTree = "<group>"; };
 		CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DATEROAD-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6896EC2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DATEROAD_SwiftUIApp.swift; sourceTree = "<group>"; };
 		CA6896EE2CC26B55005315B1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 				CA524CA12CDF6B2A001792C9 /* HomeView.swift */,
 				CA524CA32CDF6BD5001792C9 /* TopUserInfoView.swift */,
 				CA524CA82CE1DF38001792C9 /* HotDateCourseView.swift */,
+				CA5D0F262CE3AC220060B72C /* BannerView.swift */,
+				CA5D0F2A2CE4CB7B0060B72C /* NewDateCourseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 			children = (
 				CA524CA62CDF7499001792C9 /* UpcomingDateModel.swift */,
 				CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */,
+				CA5D0F282CE3ADBA0060B72C /* BannerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 			files = (
 				CA6897102CC27EC1005315B1 /* Font+.swift in Sources */,
 				CA524CA22CDF6B2A001792C9 /* HomeView.swift in Sources */,
+				CA5D0F2B2CE4CB7B0060B72C /* NewDateCourseView.swift in Sources */,
 				CA68974B2CC7E51F005315B1 /* Text+.swift in Sources */,
 				CA6897462CC7BBC4005315B1 /* CourseModel.swift in Sources */,
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
@@ -489,6 +499,7 @@
 				CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */,
 				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
+				CA5D0F292CE3ADBA0060B72C /* BannerModel.swift in Sources */,
 				CA6897362CC65382005315B1 /* UserInfoView.swift in Sources */,
 				CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */,
 				CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */,
@@ -512,6 +523,7 @@
 				CA68974D2CC7F4E9005315B1 /* DREmptyView.swift in Sources */,
 				CA6897292CC56264005315B1 /* MyPageModel.swift in Sources */,
 				CA6897342CC64446005315B1 /* MyPageSection.swift in Sources */,
+				CA5D0F272CE3AC220060B72C /* BannerView.swift in Sources */,
 				CA6897242CC54FB0005315B1 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -48,12 +48,12 @@ struct HotDateCourseTitleView: View {
             Text(attributedText)
                 .frame(
                     maxWidth: .infinity,
-                    maxHeight: 62,
+                    minHeight: 62,
                     alignment: .leading
                 )
                 .lineLimit(2)
                 .font(Font.system(size: 24, weight: .black))
-                .padding(.horizontal, 16)
+                .padding(EdgeInsets(top: 21, leading: 16, bottom: 0, trailing: 16))
             HStack {
                 Text(HOME.HOT_DATE_SUB_TITLE)
                     .setText(font: .body_med_13, textColor: .gray400)

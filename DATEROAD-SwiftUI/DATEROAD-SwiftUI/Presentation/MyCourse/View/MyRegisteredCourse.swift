@@ -14,7 +14,7 @@ struct MyRegisteredCourse: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
-        List(courseData, id: \.self) { course in
+        List($courseData, id: \.self) { course in
             CourseView(course: course)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(.zero))
@@ -34,15 +34,17 @@ struct MyRegisteredCourse: View {
 
 struct CourseView: View {
     
-    var course: CourseModel
+    @Binding var course: CourseModel
     
     var body: some View {
         HStack(spacing: 15) {
             CourseThumbnailView(courseThumbnail: course.thumbnail, courseLike: course.like)
-            CourseInfoView(courseLocation: course.city,
-                           courseTitle: course.title,
-                           courseCost: course.cost,
-                           courseTime: course.duration)
+            CourseInfoView(
+                courseLocation: course.city,
+                courseTitle: course.title,
+                courseCost: course.cost,
+                courseTime: course.duration
+            )
         }
         .frame(height: 140)
     }
@@ -84,33 +86,41 @@ struct CourseInfoView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(courseLocation)
-                .setText(font: .body_med_13,
-                         textColor: .gray400,
-                         padding: EdgeInsets(top: 19, leading: 0, bottom: 5, trailing: 0))
+                .setText(
+                    font: .body_med_13,
+                    textColor: .gray400,
+                    padding: EdgeInsets(top: 19, leading: 0, bottom: 5, trailing: 0)
+                )
             
             Text(courseTitle)
-                .setText(font: .body_bold_15,
-                         padding: EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0),
-                         lineLimit: 2)
+                .setText(
+                    font: .body_bold_15,
+                    padding: EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0),
+                    lineLimit: 2
+                )
             HStack(spacing: 6) {
-                ImageWithTextView(text: courseCost,
-                                  textPadding: EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 10),
-                                  font: .body_med_13,
-                                  textColor: .gray400,
-                                  image: "ic_won",
-                                  imagePadding: EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 0),
-                                  backgroundColor: .gray100,
-                                  radius: 20,
-                                  viewPadding: EdgeInsets(.zero))
-                ImageWithTextView(text: courseTime,
-                                  textPadding: EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 10),
-                                  font: .body_med_13,
-                                  textColor: .gray400,
-                                  image: "ic_clock",
-                                  imagePadding: EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 0),
-                                  backgroundColor: .gray100,
-                                  radius: 20,
-                                  viewPadding: EdgeInsets(.zero))
+                ImageWithTextView(
+                    text: courseCost,
+                    textPadding: EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 10),
+                    font: .body_med_13,
+                    textColor: .gray400,
+                    image: "ic_won",
+                    imagePadding: EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 0),
+                    backgroundColor: .gray100,
+                    radius: 20,
+                    viewPadding: EdgeInsets(.zero)
+                )
+                ImageWithTextView(
+                    text: courseTime,
+                    textPadding: EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 10),
+                    font: .body_med_13,
+                    textColor: .gray400,
+                    image: "ic_clock",
+                    imagePadding: EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 0),
+                    backgroundColor: .gray100,
+                    radius: 20,
+                    viewPadding: EdgeInsets(.zero)
+                )
             }
             .padding(.bottom, 20)
             .frame(maxWidth: .infinity, alignment: .leading)

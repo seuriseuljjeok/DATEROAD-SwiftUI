@@ -150,6 +150,10 @@ enum HOME {
     static let HOT_DATE_SUB_TITLE = "후기 보장 HOT 데이트 코스 둘러보기"
     
     static let GO_TO_DATE = "더보기"
+    
+    static let NEW_DATE_TITLE = "새로 올라왔어요"
+    
+    static let NEW_DATE_SUB_TITLE = "가장 최근에 올라온 코스 보러가기"
         
 }
 
