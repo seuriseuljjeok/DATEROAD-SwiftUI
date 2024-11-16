@@ -8,10 +8,10 @@
 import Foundation
 
 struct BannerModel: Equatable {
-    
+        
     let advertisementId: Int
     
-    let imageUrl: String
+    var imageUrl: String
     
     init(advertisementId: Int, imageUrl: String) {
         self.advertisementId = advertisementId
