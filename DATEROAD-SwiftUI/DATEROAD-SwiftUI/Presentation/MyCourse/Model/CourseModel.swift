@@ -49,4 +49,35 @@ struct CourseModel: Hashable {
         ]
     }
     
+    static var newDateCourseDummyData: [CourseModel] {
+        return [
+            CourseModel(
+                courseId: 1,
+                thumbnail: "empty_course",
+                title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다",
+                city: "건대/성수/왕십리",
+                cost: "10만원 초과",
+                duration: "10시간",
+                like: 5
+            ),
+            CourseModel(
+                courseId: 1,
+                thumbnail: "img_point2",
+                title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?",
+                city: "건대/성수/왕십리",
+                cost: "10만원 초과",
+                duration: "9시간",
+                like: 7
+            ),
+            CourseModel(
+                courseId: 1,
+                thumbnail: "img_point3",
+                title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다",
+                city: "건대/성수/왕십리",
+                cost: "10만원 초과",
+                duration: "1시간",
+                like: 11
+            ),
+        ]
+    }
 }

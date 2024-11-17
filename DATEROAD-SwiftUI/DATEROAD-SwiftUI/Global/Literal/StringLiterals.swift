@@ -138,3 +138,33 @@ enum PLACEHOLDER {
     static let NICKNAME = "닉네임을 입력해 주세요"
     
 }
+
+enum HOME {
+    
+    static let EMPTY_TICKET_TITLE = "다가오는 데이트 일정이 없어요"
+    
+    static let EMPTY_TICKET_SUBTITLE = "일정을 등록하러 가볼까요?"
+    
+    static let HOT_DATE_TITLE = " 오늘은\n이런 데이트 어떠세요?"
+    
+    static let HOT_DATE_SUB_TITLE = "후기 보장 HOT 데이트 코스 둘러보기"
+    
+    static let GO_TO_DATE = "더보기"
+    
+    static let NEW_DATE_TITLE = "새로 올라왔어요"
+    
+    static let NEW_DATE_SUB_TITLE = "가장 최근에 올라온 코스 보러가기"
+        
+}
+
+enum PRICETAG {
+    
+    static let UNDER30K = "3만원 이하"
+    
+    static let UNDER50K = "5만원 이하"
+
+    static let UNDER100K = "10만원 이하"
+
+    static let OVER100K = "10만원 초과"
+
+}
