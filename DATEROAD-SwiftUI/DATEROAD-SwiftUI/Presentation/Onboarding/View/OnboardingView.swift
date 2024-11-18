@@ -8,13 +8,117 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @State private var onboardingData: [OnboardingModel] = OnboardingModel.onboardingData
+
+    @State private var currentIndex: Int = 0
+        
+    @State private var navigateToNextView: Bool = false
+    
+    @State private var width: CGFloat = 0
+    
+    @State private var height: CGFloat = 0
+    
+    @State private var dragOffset: CGFloat = 0
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            GeometryReader { geometry in
+                ZStack(alignment: .bottom) {
+                    Color(.purple600)
+                    TabView(selection: $currentIndex) {
+                        ForEach(Array(onboardingData.enumerated()), id: \.element.image) { index, data in
+                            OnboardingItem(
+                                data: data,
+                                width: width,
+                                height: height
+                            )
+                            .ignoresSafeArea(edges: [.top, .horizontal])
+                            .tag(index)
+                            .gesture(
+                                DragGesture(minimumDistance: 10)
+                                    .onChanged { value in
+                                        dragOffset = value.translation.width
+                                    }
+                                    .onEnded { value in
+                                        if dragOffset < -width / 4 && currentIndex < 2 {
+                                            withAnimation {
+                                                currentIndex += 1
+                                            }
+                                        } else if dragOffset > width / 4 && currentIndex > 0 {
+                                            withAnimation {
+                                                currentIndex -= 1
+                                            }
+                                        } else if dragOffset < 0 && currentIndex == 2 {
+                                            navigateToNextView = true
+                                        }
+                                        dragOffset = 0
+                                    }
+                                )
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    customIndicator
+                        .padding(.bottom, height * 0.03)
+                    bottomButton
+                        .padding(.bottom, height * 0.069)
+                    NavigationLink(
+                        destination: ProfileView().navigationBarBackButtonHidden(),
+                        isActive: $navigateToNextView,
+                        label: { EmptyView() }
+                    )
+                    .hidden()
+                }
+                .onAppear {
+                    width = geometry.size.width
+                    height = geometry.size.height
+                }
+            }
+            .ignoresSafeArea(edges: [.top, .horizontal])
+        }
+    }
+    
+    private var customIndicator: some View {
+        HStack(spacing: 10) {
+            ForEach(0..<3, id: \.self) { indicator in
+                Circle()
+                    .frame(width: 8, height: 8)
+                    .foregroundStyle(currentIndex == indicator ? .purple600 : .gray200)
+            }
+        }
+    }
+    
+    private var bottomButton: some View {
+        Button(action: {
+            if currentIndex < 2 {
+                withAnimation(.easeInOut) {
+                    currentIndex += 1
+                }
+            } else {
+                navigateToNextView = true
+            }
+        }) {
+            Text(onboardingData[currentIndex].buttonTitle)
+                .setText(
+                    alignment: .center,
+                    font: .body_bold_15,
+                    textColor: .white000
+                )
+        }
+        .frame(height: 54)
+        .background(.purple600)
+        .clipShape(RoundedRectangle(cornerRadius: 29))
+        .padding(.horizontal, 66)
+    }
+    
+    private func goToNextView() {
+        if currentIndex == 2 {
+            navigateToNextView = true
+        }
     }
 }
 
-#Preview {
-    OnboardingView()
 struct OnboardingItem: View {
     
     var data: OnboardingModel
