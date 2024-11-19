@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2FECBA2CE9BDFB00C261E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FECB92CE9BDFB00C261E0 /* OnboardingView.swift */; };
+		CA2FECBD2CE9BFAA00C261E0 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FECBC2CE9BFAA00C261E0 /* OnboardingModel.swift */; };
+		CA2FECBF2CEC451C00C261E0 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2FECBE2CEC451C00C261E0 /* SplashView.swift */; };
+		CA2FECC22CEC45AB00C261E0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CA2FECC12CEC45AB00C261E0 /* Lottie */; };
 		CA524C942CDA2825001792C9 /* DRChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C932CDA2825001792C9 /* DRChipView.swift */; };
 		CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C952CDA2A6E001792C9 /* NicknameView.swift */; };
 		CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA524C972CDA2A94001792C9 /* DateTendencyView.swift */; };
@@ -54,6 +58,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA2FECB92CE9BDFB00C261E0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CA2FECBC2CE9BFAA00C261E0 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		CA2FECBE2CEC451C00C261E0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CA524C932CDA2825001792C9 /* DRChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRChipView.swift; sourceTree = "<group>"; };
 		CA524C952CDA2A6E001792C9 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		CA524C972CDA2A94001792C9 /* DateTendencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTendencyView.swift; sourceTree = "<group>"; };
@@ -107,12 +114,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2FECC22CEC45AB00C261E0 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2FECB72CE9BDDA00C261E0 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FECBB2CE9BF9800C261E0 /* Model */,
+				CA2FECB82CE9BDEC00C261E0 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CA2FECB82CE9BDEC00C261E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FECB92CE9BDFB00C261E0 /* OnboardingView.swift */,
+				CA2FECBE2CEC451C00C261E0 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA2FECBB2CE9BF9800C261E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA2FECBC2CE9BFAA00C261E0 /* OnboardingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CA524C9F2CDF6B11001792C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +217,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA2FECB72CE9BDDA00C261E0 /* Onboarding */,
 				CA524C9F2CDF6B11001792C9 /* Home */,
 				CA6897662CD28021005315B1 /* Profile */,
 				CA6897402CC7BAE8005315B1 /* MyCourse */,
@@ -429,6 +464,9 @@
 			dependencies = (
 			);
 			name = "DATEROAD-SwiftUI";
+			packageProductDependencies = (
+				CA2FECC12CEC45AB00C261E0 /* Lottie */,
+			);
 			productName = "DATEROAD-SwiftUI";
 			productReference = CA6896E92CC26B55005315B1 /* DATEROAD-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -457,6 +495,9 @@
 				Base,
 			);
 			mainGroup = CA6896E02CC26B55005315B1;
+			packageReferences = (
+				CA2FECC02CEC45AB00C261E0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = CA6896EA2CC26B55005315B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -497,6 +538,7 @@
 				CA6896EF2CC26B55005315B1 /* LoginView.swift in Sources */,
 				CA524CA72CDF7499001792C9 /* UpcomingDateModel.swift in Sources */,
 				CA6897492CC7E4D7005315B1 /* ImageWithTitleView.swift in Sources */,
+				CA2FECBF2CEC451C00C261E0 /* SplashView.swift in Sources */,
 				CA68973F2CC68846005315B1 /* PointSystemModel.swift in Sources */,
 				CA68971A2CC287A3005315B1 /* Config.swift in Sources */,
 				CA5D0F292CE3ADBA0060B72C /* BannerModel.swift in Sources */,
@@ -515,6 +557,8 @@
 				CA6897382CC653C2005315B1 /* MyPageSectionView.swift in Sources */,
 				CA524C962CDA2A6E001792C9 /* NicknameView.swift in Sources */,
 				CA68973A2CC686D2005315B1 /* PointSystemView.swift in Sources */,
+				CA2FECBD2CE9BFAA00C261E0 /* OnboardingModel.swift in Sources */,
+				CA2FECBA2CE9BDFB00C261E0 /* OnboardingView.swift in Sources */,
 				CA6896ED2CC26B55005315B1 /* DATEROAD_SwiftUIApp.swift in Sources */,
 				CA6897322CC6411F005315B1 /* Shape+.swift in Sources */,
 				CA524CAD2CE1EC4B001792C9 /* Int+.swift in Sources */,
@@ -732,6 +776,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA2FECC02CEC45AB00C261E0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA2FECC12CEC45AB00C261E0 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA2FECC02CEC45AB00C261E0 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA6896E12CC26B55005315B1 /* Project object */;
 }

@@ -14,9 +14,11 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.purple600).ignoresSafeArea()
+                Color(.purple600)
+                    .ignoresSafeArea()
                 VStack {
-                    Spacer().frame(height: 210)
+                    Spacer()
+                        .frame(height: 210)
                     Image(.icSplashlogo)
                     Spacer()
                     Button(action: {
@@ -41,10 +43,11 @@ struct LoginView: View {
                         
                     }) {
                         Text(LOGIN.APPLE_LOGIN)
-                            .setText(maxHeight: 45,
-                                     alignment: .center,
-                                     font: .body_bold_15,
-                                     textColor: .white000)
+                            .setText(
+                                maxHeight: 45,
+                                alignment: .center,
+                                font: .body_bold_15,
+                                textColor: .white000)
                             .background(.black000)
                             .cornerRadius(6)
                             .padding(.horizontal, 37) // 버튼의 좌우 여백 설정

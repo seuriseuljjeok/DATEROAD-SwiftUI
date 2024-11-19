@@ -15,20 +15,28 @@ struct MyPageSectionView: View {
     @Binding var showWithDrawalAlert: Bool
     
     @Binding var isLogout: Bool
-
+    
     let sections = MyPageSection.dataSource
-
+    
     var body: some View {
         VStack(spacing: 0) {
             ForEach(sections, id: \.self) { section in
                 if section == MyPageSection.myCourse {
-                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert, isLogout: $isLogout)
-                        .frame(height: 60)
-                        .padding(.top, 16)
-                        .background(Color.white)
+                    MyPageSectionItem(
+                        title: section.title,
+                        showLogoutAlert: $showLogoutAlert,
+                        isLogout: $isLogout
+                    )
+                    .frame(height: 60)
+                    .padding(.top, 16)
+                    .background(Color.white)
                 } else {
-                    MyPageSectionItem(title: section.title, showLogoutAlert: $showLogoutAlert, isLogout: $isLogout)
-                        .frame(height: 60)
+                    MyPageSectionItem(
+                        title: section.title,
+                        showLogoutAlert: $showLogoutAlert,
+                        isLogout: $isLogout
+                    )
+                    .frame(height: 60)
                 }
             }
             Spacer()
@@ -38,13 +46,16 @@ struct MyPageSectionView: View {
             }) {
                 HStack {
                     Text(MYPAGE.WITHDRAWAL)
-                        .setText(alignment: .trailing, 
-                                 font: .body_med_13,
-                                 textColor: .gray400,
-                                 padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20))
+                        .setText(
+                            alignment: .trailing,
+                            font: .body_med_13,
+                            textColor: .gray400,
+                            padding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 20)
+                        )
                 }
             }
-            Spacer().frame(height: 36)
+            Spacer()
+                .frame(height: 36)
         }
         .background(.white000)
         .padding(.horizontal, 0)
