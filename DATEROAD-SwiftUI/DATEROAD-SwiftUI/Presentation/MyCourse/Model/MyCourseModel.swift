@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CourseModel: Hashable {
+struct MyCourseModel: Hashable {
     
     let courseId: Int
     
@@ -33,25 +33,25 @@ struct CourseModel: Hashable {
         self.like = like
     }
     
-    static var dummyData: [CourseModel] {
-        return [CourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "10시간", like: 5),
-                CourseModel(courseId: 1, thumbnail: "img_point2", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "9시간", like: 7),
-                CourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "1시간", like: 11),
-                CourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "2시간", like: 3),
-                CourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "5시간", like: 4),
-                CourseModel(courseId: 1, thumbnail: "img_point2", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "4시간", like: 15),
-                CourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "7시간", like: 12),
-                CourseModel(courseId: 1, thumbnail: "img_point2", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "13시간", like: 45),
-                CourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "12시간", like: 3),
-                CourseModel(courseId: 1, thumbnail: "img_point4", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "1시간", like: 57),
-                CourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "4시간", like: 50),
-                CourseModel(courseId: 1, thumbnail: "img_point2", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "6시간", like: 5)
+    static var dummyData: [MyCourseModel] {
+        return [MyCourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "10시간", like: 5),
+                MyCourseModel(courseId: 1, thumbnail: "img_point2", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "9시간", like: 7),
+                MyCourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "1시간", like: 11),
+                MyCourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "2시간", like: 3),
+                MyCourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "5시간", like: 4),
+                MyCourseModel(courseId: 1, thumbnail: "img_point2", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "4시간", like: 15),
+                MyCourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "7시간", like: 12),
+                MyCourseModel(courseId: 1, thumbnail: "img_point2", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "13시간", like: 45),
+                MyCourseModel(courseId: 1, thumbnail: "empty_course", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "12시간", like: 3),
+                MyCourseModel(courseId: 1, thumbnail: "img_point4", title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "1시간", like: 57),
+                MyCourseModel(courseId: 1, thumbnail: "img_point3", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "4시간", like: 50),
+                MyCourseModel(courseId: 1, thumbnail: "img_point2", title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다", city: "건대/성수/왕십리", cost: "10만원 초과", duration: "6시간", like: 5)
         ]
     }
     
-    static var newDateCourseDummyData: [CourseModel] {
+    static var newDateCourseDummyData: [MyCourseModel] {
         return [
-            CourseModel(
+            MyCourseModel(
                 courseId: 1,
                 thumbnail: "empty_course",
                 title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다",
@@ -60,7 +60,7 @@ struct CourseModel: Hashable {
                 duration: "10시간",
                 like: 5
             ),
-            CourseModel(
+            MyCourseModel(
                 courseId: 1,
                 thumbnail: "img_point2",
                 title: "성수동 당일치기 데이트 코스 둘러 보러 가실까요?",
@@ -69,7 +69,7 @@ struct CourseModel: Hashable {
                 duration: "9시간",
                 like: 7
             ),
-            CourseModel(
+            MyCourseModel(
                 courseId: 1,
                 thumbnail: "img_point3",
                 title: "여기 야키니쿠 꼭 먹으러 가세요 하지만 일본에 있습니다",

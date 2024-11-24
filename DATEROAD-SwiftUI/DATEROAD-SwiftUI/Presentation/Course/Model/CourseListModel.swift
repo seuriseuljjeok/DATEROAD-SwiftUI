@@ -9,21 +9,21 @@ import Foundation
 
 struct CourseListModel {
     
-    let courseId: Int?
+    let courseId: Int
     
-    let thumbnail: String?
+    let thumbnail: String
     
-    let location: String?
+    let location: String
     
-    let title: String?
+    let title: String
     
-    let cost: Int?
+    let cost: Int
     
-    let time: Float?
+    let time: Float
     
-    let like: Int?
+    let like: Int
     
-    init(courseId: Int?, thumbnail: String, location: String?, title: String?, cost: Int?, time: Float?, like: Int?) {
+    init(courseId: Int, thumbnail: String, location: String, title: String, cost: Int, time: Float, like: Int) {
         self.courseId = courseId
         self.thumbnail = thumbnail
         self.location = location

@@ -104,7 +104,7 @@ struct MyPageSectionItem: View {
     func goToNextView(for section: String) {
         switch section {
         case MyPageSection.myCourse.title:
-            nextView = AnyView(MyRegisteredCourse().navigationBarBackButtonHidden())
+            nextView = AnyView(MyRegisteredCourseView().navigationBarBackButtonHidden())
             navigateToNextView = true
         case MyPageSection.pointSystem.title:
             nextView = AnyView(PointSystemView().navigationBarBackButtonHidden())
