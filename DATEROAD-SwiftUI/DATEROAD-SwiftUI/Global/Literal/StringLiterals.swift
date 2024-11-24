@@ -168,3 +168,11 @@ enum PRICETAG {
     static let OVER100K = "10만원 초과"
 
 }
+
+enum COURSE {
+    
+    static let LOOK_AROUND_COURSE = "코스 둘러보기"
+    
+    static let LOCATION = "지역"
+    
+}

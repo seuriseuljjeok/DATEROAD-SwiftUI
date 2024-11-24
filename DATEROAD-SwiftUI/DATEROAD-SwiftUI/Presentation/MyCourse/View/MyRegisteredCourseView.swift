@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyRegisteredCourse: View {
+struct MyRegisteredCourseView: View {
     
     @State private var courseData: [CourseModel] = CourseModel.dummyData
     
@@ -130,6 +130,6 @@ struct CourseInfoView: View {
 
 struct MyRegisteredCourse_Previews: PreviewProvider {
     static var previews: some View {
-        MyRegisteredCourse()
+        MyRegisteredCourseView()
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 // 공통 네비게이션 바 스타일 Modifier
 struct CustomNavigationBarModifier: ViewModifier {
     
+    var hasRightIcon: Bool = false
+    
     var hasLeftIcon: Bool = false
     
     var hasLeftTitle: Bool = false
@@ -19,6 +21,8 @@ struct CustomNavigationBarModifier: ViewModifier {
     var title: String = "Default Title"
     
     var leftIconAction: (() -> Void)? = nil
+    
+    var rightIconAction: (() -> Void)? = nil
     
     
     func body(content: Content) -> some View {
@@ -55,23 +59,47 @@ struct CustomNavigationBarModifier: ViewModifier {
                             .frame(minHeight: 54, alignment: .center)
                     }
                 }
+                
+                // 우측 아이콘이 있는 경우
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if hasRightIcon {
+                        Image(.icPlus)
+                            .onTapGesture {
+                                rightIconAction?()
+                            }
+                            .frame(width: 44, height: 30)
+                            .background(.purple600)
+                            .clipShape(
+                                RoundedRectangle(cornerRadius: 20)
+                            )
+                    }
+                }
             }
     }
 }
 
 extension View {
     
-    func customNavigationBar(hasLeftIcon: Bool = false,
-                             hasLeftTitle: Bool = false,
-                             hasCenterTitle: Bool = false,
-                             title: String = "Default Title",
-                             leftIconAction: (() -> Void)? = nil
+    func customNavigationBar(
+        hasRightIcon: Bool = false,
+        hasLeftIcon: Bool = false,
+        hasLeftTitle: Bool = false,
+        hasCenterTitle: Bool = false,
+        title: String = "Default Title",
+        leftIconAction: (() -> Void)? = nil,
+        rightIconAction: (() -> Void)? = nil
     ) -> some View {
-        self.modifier(CustomNavigationBarModifier(hasLeftIcon: hasLeftIcon,
-                                                  hasLeftTitle: hasLeftTitle,
-                                                  hasCenterTitle: hasCenterTitle,
-                                                  title: title,
-                                                  leftIconAction: leftIconAction))
+        self.modifier(
+            CustomNavigationBarModifier(
+                hasRightIcon: hasRightIcon,
+                hasLeftIcon: hasLeftIcon,
+                hasLeftTitle: hasLeftTitle,
+                hasCenterTitle: hasCenterTitle,
+                title: title,
+                leftIconAction: leftIconAction,
+                rightIconAction: rightIconAction
+            )
+        )
     }
     
 }
@@ -143,10 +171,12 @@ struct CustomAlertModifier: ViewModifier {
     
     private func title(title: String, font: FontName = .body_bold_17, padding: EdgeInsets = EdgeInsets(top: 39, leading: 0, bottom: 0, trailing: 0)) -> some View {
         Text(title)
-            .setText(alignment: .center,
-                     font: font,
-                     textColor: .black000,
-                     padding: padding)
+            .setText(
+                alignment: .center,
+                font: font,
+                textColor: .black000,
+                padding: padding
+            )
     }
     
     private func actionButton(title: String, action: (() -> Void)?, textColor: Color = .black000) -> some View {
@@ -154,21 +184,33 @@ struct CustomAlertModifier: ViewModifier {
             action?()
         }) {
             Text(title)
-                .setText(alignment: .center, font: .body_bold_15, textColor: textColor)
+                .setText(
+                    alignment: .center,
+                    font: .body_bold_15,
+                    textColor: textColor
+                )
         }
     }
     
     private func doubleActionButtons() -> some View {
         HStack {
-            actionButton(title: leftButtonTitle ?? "", action: leftButtonAction, textColor: .gray400)
-                .frame(width: 152, height: 48)
-                .background(.gray100)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+            actionButton(
+                title: leftButtonTitle ?? "",
+                action: leftButtonAction,
+                textColor: .gray400
+            )
+            .frame(width: 152, height: 48)
+            .background(.gray100)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             Spacer()
-            actionButton(title: rightButtonTitle ?? "", action: rightButtonAction, textColor: .white000)
-                .frame(width: 152, height: 48)
-                .background(.purple600)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+            actionButton(
+                title: rightButtonTitle ?? "",
+                action: rightButtonAction,
+                textColor: .white000
+            )
+            .frame(width: 152, height: 48)
+            .background(.purple600)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .padding(EdgeInsets(top: 0, leading: 14, bottom: 14, trailing: 14))
     }
@@ -177,26 +219,32 @@ struct CustomAlertModifier: ViewModifier {
 
 extension View {
     
-    func customAlert(showAlert: Binding<Bool>,
-                     alertType: AlertType,
-                     primaryTitle: String,
-                     secondaryTitle: String? = nil,
-                     rightButtonTitle: String? = ALERT.CANCEL,
-                     leftButtonTitle: String? = nil,
-                     singleButtonTitle: String? = nil,
-                     rightButtonAction: (() -> Void)? = nil,
-                     leftButtonAction: (() -> Void)? = nil,
-                     singleButtonAction: (() -> Void)? = nil
+    func customAlert(
+        showAlert: Binding<Bool>,
+        alertType: AlertType,
+        primaryTitle: String,
+        secondaryTitle: String? = nil,
+        rightButtonTitle: String? = ALERT.CANCEL,
+        leftButtonTitle: String? = nil,
+        singleButtonTitle: String? = nil,
+        rightButtonAction: (() -> Void)? = nil,
+        leftButtonAction: (() -> Void)? = nil,
+        singleButtonAction: (() -> Void)? = nil
     ) -> some View {
-        self.modifier(CustomAlertModifier(showAlert: showAlert, alertType: alertType,
-                                          primaryTitle: primaryTitle,
-                                          secondaryTitle: secondaryTitle,
-                                          rightButtonTitle: rightButtonTitle,
-                                          leftButtonTitle: leftButtonTitle,
-                                          singleButtonTitle: singleButtonTitle,
-                                          rightButtonAction: rightButtonAction,
-                                          leftButtonAction: leftButtonAction,
-                                          singleButtonAction: singleButtonAction))
+        self.modifier(
+            CustomAlertModifier(
+                showAlert: showAlert,
+                alertType: alertType,
+                primaryTitle: primaryTitle,
+                secondaryTitle: secondaryTitle,
+                rightButtonTitle: rightButtonTitle,
+                leftButtonTitle: leftButtonTitle,
+                singleButtonTitle: singleButtonTitle,
+                rightButtonAction: rightButtonAction,
+                leftButtonAction: leftButtonAction,
+                singleButtonAction: singleButtonAction
+            )
+        )
     }
     
 }
