@@ -81,6 +81,8 @@ enum EMPTY {
     
     static let MYREGISTEREDCOURSE = "아직 등록한 코스가 없어요!"
     
+    static let COURSE = "아직 등록된 코스가 없어요!"
+    
 }
 
 enum WEBVIEW {

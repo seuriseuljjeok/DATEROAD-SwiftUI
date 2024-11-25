@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CourseView: View {
     
+    @State var courseListData: [CourseListModel] = []
+    
     private let priceFilter: [String] = [PRICETAG.UNDER30K, PRICETAG.UNDER50K, PRICETAG.UNDER100K, PRICETAG.OVER100K]
     
     var body: some View {
@@ -17,7 +19,7 @@ struct CourseView: View {
                 Color(.white000)
                 VStack {
                     CourseFilteringView
-                    CourseListView()
+                    CourseListView(courseListData: $courseListData)
                 }
             }
             .customNavigationBar(
@@ -84,7 +86,7 @@ struct CourseView: View {
     
     private struct CourseListView: View {
         
-        @State var courseListData: [CourseListModel] = CourseListModel.dummy
+        @Binding var courseListData: [CourseListModel]
         
         let columns = [GridItem(.flexible(), spacing: 15), GridItem(.flexible(), spacing: 15)]
         
@@ -93,14 +95,18 @@ struct CourseView: View {
                 let width = (geometry.size.width - 47) / 2
                 let height = geometry.size.height
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach($courseListData, id: \.courseId) { data in
-                            CourseListItem(courseData: data, width: width, height: height)
+                if courseListData.isEmpty {
+                    DREmptyView(image: Image(.emptyCourseList), title: EMPTY.COURSE, paddingFromTop: height * 0.0517)
+                } else {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach($courseListData, id: \.courseId) { data in
+                                CourseListItem(courseData: data, width: width, height: height)
+                            }
                         }
                     }
+                    .padding(.horizontal, 16)
                 }
-                .padding(.horizontal, 16)
             }
         }
     }
