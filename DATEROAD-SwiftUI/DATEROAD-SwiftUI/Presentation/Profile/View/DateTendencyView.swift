@@ -45,7 +45,7 @@ struct ChipView: View {
     
     @State private var selectedTags: [Bool] = Array(repeating: false, count: TendencyTag.allCases.count)
     
-    @State private var chipData: [any Chipable] = TendencyTag.allCases.map { $0.tag }
+    @State private var chipData: [TagModel] = TendencyTag.allCases.map { $0.tag }
     
     @State private var height: CGFloat = 106 // ChipView의 높이를 저장하기 위한 상태 변수
 

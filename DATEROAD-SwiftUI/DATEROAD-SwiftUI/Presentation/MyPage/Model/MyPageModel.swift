@@ -25,15 +25,17 @@ struct MyPageUserInfoModel {
     }
     
     static var emptyModel: MyPageUserInfoModel {
-        return MyPageUserInfoModel(nickname: "스리",
-                                   tagList: ["DRIVE", "SHOPPING", "WORKSHOP"],
-                                   point: 0,
-                                   imageURL: nil)
+        return MyPageUserInfoModel(
+            nickname: "스리",
+            tagList: ["DRIVE", "SHOPPING", "WORKSHOP"],
+            point: 0,
+            imageURL: nil
+        )
     }
     
 }
 
-public protocol Chipable {
+public protocol Chipable: Identifiable {
     
     var id: UUID { get }
     

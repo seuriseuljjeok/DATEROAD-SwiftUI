@@ -178,3 +178,9 @@ enum COURSE {
     static let LOCATION = "지역"
     
 }
+
+enum BOTTOM_SHEET {
+    
+    static let LOCATION_FILTER = "지역을 선택해주세요"
+    
+}
