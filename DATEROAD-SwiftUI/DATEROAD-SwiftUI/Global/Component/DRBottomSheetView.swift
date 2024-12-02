@@ -9,19 +9,27 @@ import SwiftUI
 
 struct DRBottomSheetView<Content: View>: View {
     
-    let content: Content
+    @Binding var isPresented: Bool
+    
+    let content: (Binding<Bool>) -> Content
     
 
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
+    init(isPresented: Binding<Bool>, @ViewBuilder content: @escaping (Binding<Bool>) -> Content) {
+        self._isPresented = isPresented
+        self.content = content
     }
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Color(.black000)
-                .opacity(0.4)
-                .ignoresSafeArea()
-            content
+            if isPresented {
+                Color(.black000)
+                    .opacity(0.4)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+            }
+            content($isPresented)
+                .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
+                .animation(.easeInOut(duration: 0.5), value: isPresented)
         }
         .ignoresSafeArea()
     }
@@ -29,11 +37,18 @@ struct DRBottomSheetView<Content: View>: View {
 
 struct DRLocationFilterView: View {
     
+    @Binding var isPresented: Bool
+    
+    @State var isDisabled: Bool = true
+    
     @State var selectedCountry: String = "서울"
     
-    let countryData: [LocationFilter.Country] = LocationFilter.Country.allCases
+    @State var selectedCity: String? = nil
+        
+    @State var cityData: [LocationFilter.City] = LocationFilter.Country.seoul.cities
     
-    @State var cityData: [LocationFilter.City.Seoul] = LocationFilter.City.Seoul.allCases
+    let countryData: [LocationFilter.Country] = LocationFilter.Country.allCases
+
     
     var body: some View {
         VStack(spacing: 0) {
@@ -50,6 +65,7 @@ struct DRLocationFilterView: View {
                         .frame(width: 40, height: 40)
                         .onTapGesture {
                             // TODO: - 바텀 시트 닫기
+                            isPresented = false
                         }
                 }
                 .frame(height: 40)
@@ -73,6 +89,12 @@ struct DRLocationFilterView: View {
                                 // TODO: - 지역 필터링
                                 if selectedCountry != country.rawValue {
                                     selectedCountry = country.rawValue
+                                    
+                                    // 지역에 맞는 도시 데이터 세팅
+                                    cityData = country.cities
+                                    // 선택된 도시 및 하단 적용 버튼 초기화
+                                    selectedCity = nil
+                                    isDisabled = true
                                 }
                             }
                     }
@@ -97,11 +119,21 @@ struct DRLocationFilterView: View {
                             maxWidth: nil,
                             maxHeight: 18,
                             font: .body_med_13,
-                            textColor: .gray400,
+                            textColor: selectedCity == city.rawValue ? .white000 : .gray400,
                             padding: EdgeInsets(top: 6, leading: 14, bottom: 6, trailing: 14)
                         )
-                        .background(.gray100)
+                        .background(selectedCity == city.rawValue ? .purple600 : .gray100)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .onTapGesture {
+                            // 적용하기 버튼 활성화
+                            isDisabled = false
+                            
+                            // TODO: - 도시 필터링
+                            if selectedCity != city.rawValue {
+                                selectedCity = city.rawValue
+                            }
+                            
+                        }
                 }
             }
             .frame(height: 204)
@@ -114,24 +146,19 @@ struct DRLocationFilterView: View {
                     .setText(
                         alignment: .center,
                         font: .body_bold_15,
-                        textColor: .gray400
+                        textColor: isDisabled ? .gray400 : .white000
                     )
             }
             .frame(maxWidth: .infinity, maxHeight: 54)
-            .background(.gray200)
+            .background(isDisabled ? .gray200 : .purple600)
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .padding(EdgeInsets(top: 16, leading: 25, bottom: 0, trailing: 25))
+            .disabled(isDisabled)
             
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 469)
         .background(.white000)
         .clipShape(RoundedCornerShape(corners: [.topRight, .topLeft], radius: 16))
-    }
-}
-
-struct DRBottomSheetView_Preview: PreviewProvider {
-    static var previews: some View {
-        return DRBottomSheetView { DRLocationFilterView() }
     }
 }

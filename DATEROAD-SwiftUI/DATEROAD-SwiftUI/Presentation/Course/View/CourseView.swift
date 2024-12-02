@@ -11,14 +11,18 @@ struct CourseView: View {
     
     @State var courseListData: [CourseListModel] = []
 
-    
+    @State private var isPresentedBottomSheet: Bool = false
+
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
                 Color(.white000)
                 VStack {
-                    CourseFilteringView()
+                    CourseFilteringView(isPresentedBottomSheet: $isPresentedBottomSheet)
                     CourseListView(courseListData: $courseListData)
+                }
+                DRBottomSheetView(isPresented: $isPresentedBottomSheet) { isPresented in
+                    DRLocationFilterView(isPresented: isPresented)
                 }
             }
             .customNavigationBar(
@@ -38,6 +42,8 @@ private struct CourseFilteringView: View {
     
     @State private var selectedIndex: Int? = nil
     
+    @Binding var isPresentedBottomSheet: Bool
+    
     private let priceFilter: [String] = [PRICETAG.UNDER30K, PRICETAG.UNDER50K, PRICETAG.UNDER100K, PRICETAG.OVER100K]
     
     
@@ -53,18 +59,27 @@ private struct CourseFilteringView: View {
                                 padding: EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 0)
                             )
                         Spacer()
-                        Image(.icDropdown)
+                        Button(action: {
+                            isPresentedBottomSheet = true
+                        }) {
+                            Image(.icDropdown)
+                        }
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 12))
-                            .onTapGesture {
-                                // TODO: - 필터링 초기화
-                            }
+
                     }
                 }
                 .frame(width: 150, height: 30)
                 .background(.gray100)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 Spacer()
-                Image(.btnResetIos)
+                Button(
+                    action: {
+                        selectedIndex = nil
+                        print("tap")
+                    }
+                ) {
+                    Image(.btnResetIos)
+                }
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 8))
             .onTapGesture {

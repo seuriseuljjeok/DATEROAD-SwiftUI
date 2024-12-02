@@ -30,7 +30,8 @@ enum LocationFilter {
         
     }
     
-    enum City {
+    enum City: Identifiable {
+        var id: String { self.rawValue }
         
         case seoul(Seoul)
         
@@ -49,9 +50,7 @@ enum LocationFilter {
             }
         }
         
-        enum Seoul: String, CaseIterable, Identifiable {
-            
-            var id: String { self.rawValue }
+        enum Seoul: String, CaseIterable {
             
             case all = "서울 전체"
             
