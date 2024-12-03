@@ -11,14 +11,14 @@ struct DRBottomSheetView<Content: View>: View {
     
     @Binding var isPresented: Bool
     
-    @Binding var selectedCountry: String
+    @Binding var selectedCountry: String?
     
     @Binding var selectedCity: String?
     
-    let content: (Binding<Bool>, Binding<String>, Binding<String?>) -> Content
+    let content: (Binding<Bool>, Binding<String?>, Binding<String?>) -> Content
     
 
-    init(isPresented: Binding<Bool>, selectedCountry: Binding<String>, selectedCity: Binding<String?>, @ViewBuilder content: @escaping (Binding<Bool>, Binding<String>, Binding<String?>) -> Content) {
+    init(isPresented: Binding<Bool>, selectedCountry: Binding<String?>, selectedCity: Binding<String?>, @ViewBuilder content: @escaping (Binding<Bool>, Binding<String?>, Binding<String?>) -> Content) {
         self._isPresented = isPresented
         self._selectedCountry = selectedCountry
         self._selectedCity = selectedCity
@@ -45,11 +45,11 @@ struct DRLocationFilterView: View {
     
     @Binding var isPresented: Bool
     
-    @State var isDisabled: Bool = true
-    
-    @Binding var selectedCountry: String
+    @Binding var selectedCountry: String?
     
     @Binding var selectedCity: String?
+    
+    @State var isDisabled: Bool = true
         
     @State var cityData: [LocationFilter.City] = LocationFilter.Country.seoul.cities
     
@@ -100,7 +100,6 @@ struct DRLocationFilterView: View {
                                     cityData = country.cities
                                     // 선택된 도시 및 하단 적용 버튼 초기화
                                     selectedCity = nil
-                                    isDisabled = true
                                 }
                             }
                     }
@@ -131,9 +130,6 @@ struct DRLocationFilterView: View {
                         .background(selectedCity == city.rawValue ? .purple600 : .gray100)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .onTapGesture {
-                            // 적용하기 버튼 활성화
-                            isDisabled = false
-                            
                             // TODO: - 도시 필터링
                             if selectedCity != city.rawValue {
                                 selectedCity = city.rawValue
@@ -154,22 +150,19 @@ struct DRLocationFilterView: View {
                     .setText(
                         alignment: .center,
                         font: .body_bold_15,
-                        textColor: isDisabled ? .gray400 : .white000
+                        textColor: selectedCity == nil ? .gray400 : .white000
                     )
             }
             .frame(maxWidth: .infinity, maxHeight: 54)
-            .background(isDisabled ? .gray200 : .purple600)
+            .background(selectedCity == nil ? .gray200 : .purple600)
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .padding(EdgeInsets(top: 16, leading: 25, bottom: 0, trailing: 25))
-            .disabled(isDisabled)
+            .disabled(selectedCity == nil)
             
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 469)
         .background(.white000)
         .clipShape(RoundedCornerShape(corners: [.topRight, .topLeft], radius: 16))
-        .onAppear {
-            selectedCountry = "서울"
-        }
     }
 }

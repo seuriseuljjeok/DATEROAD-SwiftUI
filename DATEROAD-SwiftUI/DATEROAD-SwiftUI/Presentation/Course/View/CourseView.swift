@@ -10,19 +10,23 @@ import SwiftUI
 struct CourseView: View {
     
     @State var courseListData: [CourseListModel] = []
-
+    
     @State private var isPresentedBottomSheet: Bool = false
     
-    @State private var selectedCountry: String = "서울"
+    @State private var selectedCountry: String? = "서울"
     
     @State private var selectedCity: String? = nil
-
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
                 Color(.white000)
                 VStack {
-                    CourseFilteringView(selectedCity: $selectedCity, isPresentedBottomSheet: $isPresentedBottomSheet)
+                    CourseFilteringView(
+                        selectedCity: $selectedCity,
+                        selectedCountry: $selectedCountry,
+                        isPresentedBottomSheet: $isPresentedBottomSheet
+                    )
                     CourseListView(courseListData: $courseListData)
                 }
                 DRBottomSheetView(
@@ -53,10 +57,12 @@ struct CourseView: View {
 private struct CourseFilteringView: View {
     
     @Binding var selectedCity: String?
+
+    @Binding var selectedCountry: String?
+            
+    @Binding var isPresentedBottomSheet: Bool
     
     @State var selectedIndex: Int? = nil
-    
-    @Binding var isPresentedBottomSheet: Bool
     
     let priceFilter: [String] = [PRICETAG.UNDER30K, PRICETAG.UNDER50K, PRICETAG.UNDER100K, PRICETAG.OVER100K]
     
@@ -69,7 +75,7 @@ private struct CourseFilteringView: View {
                         Text(selectedCity ?? COURSE.LOCATION)
                             .setText(
                                 font: .body_med_13,
-                                textColor: .gray400,
+                                textColor: selectedCity != nil ? .purple600 : .gray400,
                                 padding: EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 0)
                             )
                         Spacer()
@@ -78,18 +84,25 @@ private struct CourseFilteringView: View {
                         }) {
                             Image(.icDropdown)
                         }
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 12))
-
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 12))
                     }
                 }
                 .frame(width: 150, height: 30)
                 .background(.gray100)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(selectedCity != nil ? Color.purple600 : Color.white000, lineWidth: 1)
+                )
+                .onTapGesture {
+                    isPresentedBottomSheet = true
+                }
                 Spacer()
                 Button(
                     action: {
                         selectedIndex = nil
-                        print("tap")
+                        selectedCity = nil
+                        selectedCountry = "서울"
                     }
                 ) {
                     Image(.btnResetIos)
@@ -171,7 +184,7 @@ private struct CourseListItem: View {
     @Binding var courseData: CourseListModel
     
     @State var width: CGFloat
-
+    
     @State var height: CGFloat
     
     var body: some View {
