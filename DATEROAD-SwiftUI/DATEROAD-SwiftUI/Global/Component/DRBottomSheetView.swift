@@ -11,11 +11,17 @@ struct DRBottomSheetView<Content: View>: View {
     
     @Binding var isPresented: Bool
     
-    let content: (Binding<Bool>) -> Content
+    @Binding var selectedCountry: String
+    
+    @Binding var selectedCity: String?
+    
+    let content: (Binding<Bool>, Binding<String>, Binding<String?>) -> Content
     
 
-    init(isPresented: Binding<Bool>, @ViewBuilder content: @escaping (Binding<Bool>) -> Content) {
+    init(isPresented: Binding<Bool>, selectedCountry: Binding<String>, selectedCity: Binding<String?>, @ViewBuilder content: @escaping (Binding<Bool>, Binding<String>, Binding<String?>) -> Content) {
         self._isPresented = isPresented
+        self._selectedCountry = selectedCountry
+        self._selectedCity = selectedCity
         self.content = content
     }
     
@@ -27,7 +33,7 @@ struct DRBottomSheetView<Content: View>: View {
                     .ignoresSafeArea()
                     .transition(.opacity)
             }
-            content($isPresented)
+            content($isPresented, $selectedCountry, $selectedCity)
                 .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
                 .animation(.easeInOut(duration: 0.5), value: isPresented)
         }
@@ -41,9 +47,9 @@ struct DRLocationFilterView: View {
     
     @State var isDisabled: Bool = true
     
-    @State var selectedCountry: String = "서울"
+    @Binding var selectedCountry: String
     
-    @State var selectedCity: String? = nil
+    @Binding var selectedCity: String?
         
     @State var cityData: [LocationFilter.City] = LocationFilter.Country.seoul.cities
     
@@ -140,7 +146,9 @@ struct DRLocationFilterView: View {
             .padding(.horizontal, 25)
             
             Button(action: {
-                
+                // TODO: - 선택된 도시 및 지역 서버 통신 후 코스 목록 받아오기
+                print("selectedCountry: \(selectedCountry) | selectedCity: \(selectedCity)")
+                isPresented = false
             }) {
                 Text("적용하기")
                     .setText(
@@ -160,5 +168,8 @@ struct DRLocationFilterView: View {
         .frame(maxWidth: .infinity, maxHeight: 469)
         .background(.white000)
         .clipShape(RoundedCornerShape(corners: [.topRight, .topLeft], radius: 16))
+        .onAppear {
+            selectedCountry = "서울"
+        }
     }
 }

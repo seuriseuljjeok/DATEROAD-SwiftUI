@@ -12,17 +12,29 @@ struct CourseView: View {
     @State var courseListData: [CourseListModel] = []
 
     @State private var isPresentedBottomSheet: Bool = false
+    
+    @State private var selectedCountry: String = "서울"
+    
+    @State private var selectedCity: String? = nil
 
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
                 Color(.white000)
                 VStack {
-                    CourseFilteringView(isPresentedBottomSheet: $isPresentedBottomSheet)
+                    CourseFilteringView(selectedCity: $selectedCity, isPresentedBottomSheet: $isPresentedBottomSheet)
                     CourseListView(courseListData: $courseListData)
                 }
-                DRBottomSheetView(isPresented: $isPresentedBottomSheet) { isPresented in
-                    DRLocationFilterView(isPresented: isPresented)
+                DRBottomSheetView(
+                    isPresented: $isPresentedBottomSheet,
+                    selectedCountry: $selectedCountry,
+                    selectedCity: $selectedCity
+                ) { isPresented, selectedCountry, selectedCity in
+                    DRLocationFilterView(
+                        isPresented: isPresented,
+                        selectedCountry: selectedCountry,
+                        selectedCity: selectedCity
+                    )
                 }
             }
             .customNavigationBar(
@@ -40,11 +52,13 @@ struct CourseView: View {
 
 private struct CourseFilteringView: View {
     
-    @State private var selectedIndex: Int? = nil
+    @Binding var selectedCity: String?
+    
+    @State var selectedIndex: Int? = nil
     
     @Binding var isPresentedBottomSheet: Bool
     
-    private let priceFilter: [String] = [PRICETAG.UNDER30K, PRICETAG.UNDER50K, PRICETAG.UNDER100K, PRICETAG.OVER100K]
+    let priceFilter: [String] = [PRICETAG.UNDER30K, PRICETAG.UNDER50K, PRICETAG.UNDER100K, PRICETAG.OVER100K]
     
     
     var body: some View {
@@ -52,7 +66,7 @@ private struct CourseFilteringView: View {
             HStack {
                 Group {
                     HStack {
-                        Text(COURSE.LOCATION)
+                        Text(selectedCity ?? COURSE.LOCATION)
                             .setText(
                                 font: .body_med_13,
                                 textColor: .gray400,
