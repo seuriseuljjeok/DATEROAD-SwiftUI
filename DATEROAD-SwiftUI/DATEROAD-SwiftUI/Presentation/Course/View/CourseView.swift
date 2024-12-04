@@ -29,15 +29,11 @@ struct CourseView: View {
                     )
                     CourseListView(courseListData: $courseListData)
                 }
-                DRBottomSheetView(
-                    isPresented: $isPresentedBottomSheet,
-                    selectedCountry: $selectedCountry,
-                    selectedCity: $selectedCity
-                ) { isPresented, selectedCountry, selectedCity in
+                DRBottomSheetView(isPresented: $isPresentedBottomSheet) { isPresented in
                     DRLocationFilterView(
                         isPresented: isPresented,
-                        selectedCountry: selectedCountry,
-                        selectedCity: selectedCity
+                        selectedCountry: $selectedCountry,
+                        selectedCity: $selectedCity
                     )
                 }
             }

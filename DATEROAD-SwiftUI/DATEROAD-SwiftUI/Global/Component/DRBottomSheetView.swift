@@ -11,17 +11,11 @@ struct DRBottomSheetView<Content: View>: View {
     
     @Binding var isPresented: Bool
     
-    @Binding var selectedCountry: String?
-    
-    @Binding var selectedCity: String?
-    
-    let content: (Binding<Bool>, Binding<String?>, Binding<String?>) -> Content
+    let content: (Binding<Bool>) -> Content
     
 
-    init(isPresented: Binding<Bool>, selectedCountry: Binding<String?>, selectedCity: Binding<String?>, @ViewBuilder content: @escaping (Binding<Bool>, Binding<String?>, Binding<String?>) -> Content) {
+    init(isPresented: Binding<Bool>, @ViewBuilder content: @escaping (Binding<Bool>) -> Content) {
         self._isPresented = isPresented
-        self._selectedCountry = selectedCountry
-        self._selectedCity = selectedCity
         self.content = content
     }
     
@@ -33,7 +27,7 @@ struct DRBottomSheetView<Content: View>: View {
                     .ignoresSafeArea()
                     .transition(.opacity)
             }
-            content($isPresented, $selectedCountry, $selectedCity)
+            content($isPresented)
                 .offset(y: isPresented ? 0 : UIScreen.main.bounds.height)
                 .animation(.easeInOut(duration: 0.5), value: isPresented)
         }
