@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct MyRegisteredCourse: View {
+struct MyRegisteredCourseView: View {
     
-    @State private var courseData: [CourseModel] = CourseModel.dummyData
+    @State private var courseData: [MyCourseModel] = MyCourseModel.dummyData
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         List($courseData, id: \.self) { course in
-            CourseView(course: course)
+            HorizontalCourseItem(course: course)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(.zero))
                 .padding(.trailing, 21)
@@ -32,9 +32,9 @@ struct MyRegisteredCourse: View {
     
 }
 
-struct CourseView: View {
+struct HorizontalCourseItem: View {
     
-    @Binding var course: CourseModel
+    @Binding var course: MyCourseModel
     
     var body: some View {
         HStack(spacing: 15) {
@@ -130,6 +130,6 @@ struct CourseInfoView: View {
 
 struct MyRegisteredCourse_Previews: PreviewProvider {
     static var previews: some View {
-        MyRegisteredCourse()
+        MyRegisteredCourseView()
     }
 }

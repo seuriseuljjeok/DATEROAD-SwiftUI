@@ -81,6 +81,8 @@ enum EMPTY {
     
     static let MYREGISTEREDCOURSE = "아직 등록한 코스가 없어요!"
     
+    static let COURSE = "아직 등록된 코스가 없어요!"
+    
 }
 
 enum WEBVIEW {
@@ -167,4 +169,18 @@ enum PRICETAG {
 
     static let OVER100K = "10만원 초과"
 
+}
+
+enum COURSE {
+    
+    static let LOOK_AROUND_COURSE = "코스 둘러보기"
+    
+    static let LOCATION = "지역"
+    
+}
+
+enum BOTTOM_SHEET {
+    
+    static let LOCATION_FILTER = "지역을 선택해주세요"
+    
 }

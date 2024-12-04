@@ -45,12 +45,12 @@ struct NewDateCourseTitleView: View {
 
 struct NewDateCourseListView: View {
     
-    @State var newDateCourseData: [CourseModel] = CourseModel.newDateCourseDummyData
+    @State var newDateCourseData: [MyCourseModel] = MyCourseModel.newDateCourseDummyData
     
     var body: some View {
         VStack(spacing: 0) {
             ForEach($newDateCourseData, id: \.courseId) { data in
-                CourseView(course: data)
+                HorizontalCourseItem(course: data)
                     .padding(.horizontal, 16)
                     .onTapGesture {
                         // TODO: - 코스 상세 이동

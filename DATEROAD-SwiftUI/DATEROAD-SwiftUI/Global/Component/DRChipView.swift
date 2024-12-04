@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ChipLayoutView<ChipView: View>: View {
+struct ChipLayoutView<ChipView: View, T: Identifiable>: View {
     
-    @Binding var tagData: [any Chipable]
+    @Binding var tagData: [T]
     
     let verticalSpacing: CGFloat
     
@@ -46,7 +46,7 @@ struct ChipLayoutView<ChipView: View>: View {
                         }
                         .alignmentGuide(.top) { dimension in
                             let result = height
-                            if chipsData.id == tagData.last!.id {
+                            if index == tagData.count - 1 {
                                 height = 0
                             }
                             return result
