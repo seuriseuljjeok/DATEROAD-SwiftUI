@@ -64,6 +64,10 @@ struct DateCardView: View {
             CustomIndicator
                 .padding(.top, UIScreen.main.bounds.size.height / 812 * 28)
             
+            ViewPastDateScheduleButton
+                .padding(.top, UIScreen.main.bounds.size.height / 812 * 21)
+            
+            Spacer()
             
         }
     }
@@ -79,6 +83,22 @@ struct DateCardView: View {
                     .frame(width: 8, height: 8)
                     .foregroundStyle(currentIndex == indicator ? .purple600 : .gray200)
             }
+        }
+        
+    }
+    
+    private var ViewPastDateScheduleButton: some View {
+        
+        Button(action: {}) {
+            Text(DATESCHEDULE.SHOW_PAST_DATE_SCHEDULE)
+                .setText(
+                    maxWidth: nil,
+                    alignment: .center,
+                    font: .body_bold_15,
+                    padding: EdgeInsets(top: 11.5, leading: 39, bottom: 11.5, trailing: 39)
+                )
+                .background(.gray100)
+                .clipShape(RoundedRectangle(cornerRadius: 14))
         }
         
     }
