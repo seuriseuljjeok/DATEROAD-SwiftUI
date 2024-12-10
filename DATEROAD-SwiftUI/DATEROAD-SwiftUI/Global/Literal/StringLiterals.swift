@@ -163,6 +163,10 @@ enum DATESCHEDULE {
     
     static let DATE_SCHEDULE = "데이트 일정"
     
+    static let D_DAY = "D-Day"
+    
+    static let SHOW_PAST_DATE_SCHEDULE = "지난 데이트 보기"
+    
 }
 
 enum PRICETAG {
