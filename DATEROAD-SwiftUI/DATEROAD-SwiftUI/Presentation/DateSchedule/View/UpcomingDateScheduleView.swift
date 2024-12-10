@@ -102,6 +102,21 @@ struct DateCardView: View {
         }
         
     }
+    
+    // MARK: - Methods
+    
+    func setCardStyle(index: Int) -> (Image, Color) {
+        switch index % 3 {
+        case 0:
+            return (Image(.btnCardLime), .lime100)
+        case 1:
+            return (Image(.btnCardPink), .pink100)
+        case 2:
+            return (Image(.btnCardPurple), .purple100)
+        default:
+            return (Image(.btnCardPink), .pink100)
+        }
+    }
 }
 
 
@@ -109,6 +124,9 @@ struct DateCardItem: View {
     
     // MARK: - Property
     
+    @State var ticketImage: Image
+    
+    @State var tagBackgroundColor: Color
     
     @Binding var currentIndex: Int
     
@@ -175,6 +193,19 @@ struct DateCardItem: View {
     
     private var TagContainer: some View {
                 
+        func setTagLayout(tagIndex: Int) -> (Angle, EdgeInsets) {
+            switch tagIndex {
+            case 0:
+                return (Angle(degrees: 0), EdgeInsets(.zero))
+            case 1:
+                return (Angle(degrees: 15), EdgeInsets(top: 0, leading: 75, bottom: 39, trailing: 0))
+            case 2:
+                return (Angle(degrees: -12), EdgeInsets(top: 0, leading: 18, bottom: 69, trailing: 0))
+            default:
+                return (Angle(degrees: 0), EdgeInsets(.zero))
+            }
+        }
+        
         return ZStack(alignment: .bottomLeading) {
             Color(.clear)
             ForEach(0 ..< dateScheduleData.tags.count, id: \.self) { tagIndex in
