@@ -159,6 +159,12 @@ enum HOME {
         
 }
 
+enum DATESCHEDULE {
+    
+    static let DATE_SCHEDULE = "데이트 일정"
+    
+}
+
 enum PRICETAG {
     
     static let UNDER30K = "3만원 이하"
