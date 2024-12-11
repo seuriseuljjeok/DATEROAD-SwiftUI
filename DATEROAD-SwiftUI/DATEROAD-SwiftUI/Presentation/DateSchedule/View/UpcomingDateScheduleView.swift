@@ -14,12 +14,26 @@ struct UpcomingDateScheduleView: View {
     
     @State var dateScheduleData: [DateCardModel] = DateCardModel.dummyData
     
+    
+    // MARK: - Body
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color(.white000)
                     .ignoresSafeArea()
-                DateCardView(dateScheduleData: $dateScheduleData)
+                if dateScheduleData.count == 0 {
+                    DREmptyView(
+                        image: Image(.emptyRegisteredCourse),
+                        title: EMPTY.DATE_SCHEDULE,
+                        paddingFromTop: UIScreen.main.bounds.size.height / 812 * 23
+                    )
+                } else {
+                    DateCardView(dateScheduleData: $dateScheduleData)
+                }
+                
+                ViewPastDateScheduleButton
+                    .padding(.top, UIScreen.main.bounds.size.height / 812 * 463)
             }
             .customNavigationBar(
                 hasRightIcon: true,
@@ -27,6 +41,25 @@ struct UpcomingDateScheduleView: View {
                 title: DATESCHEDULE.DATE_SCHEDULE
             )
         }
+    }
+    
+    
+    // MARK: - SubView
+    
+    private var ViewPastDateScheduleButton: some View {
+        
+        Button(action: {}) {
+            Text(DATESCHEDULE.SHOW_PAST_DATE_SCHEDULE)
+                .setText(
+                    maxWidth: nil,
+                    alignment: .center,
+                    font: .body_bold_15,
+                    padding: EdgeInsets(top: 11.5, leading: 39, bottom: 11.5, trailing: 39)
+                )
+                .background(.gray100)
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+        }
+        
     }
 }
 
@@ -57,15 +90,12 @@ struct DateCardView: View {
                     .tag(index)
                 }
             }
-            .frame(height: UIScreen.main.bounds.height * 0.5)
+            .frame(height: UIScreen.main.bounds.height / 812 * 406)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .padding(.top, UIScreen.main.bounds.size.height / 812 * 75)
+            .padding(.bottom, UIScreen.main.bounds.size.height / 812 * 28)
             
             CustomIndicator
-                .padding(.top, UIScreen.main.bounds.size.height / 812 * 28)
-            
-            ViewPastDateScheduleButton
-                .padding(.top, UIScreen.main.bounds.size.height / 812 * 21)
             
             Spacer()
             
@@ -87,21 +117,6 @@ struct DateCardView: View {
         
     }
     
-    private var ViewPastDateScheduleButton: some View {
-        
-        Button(action: {}) {
-            Text(DATESCHEDULE.SHOW_PAST_DATE_SCHEDULE)
-                .setText(
-                    maxWidth: nil,
-                    alignment: .center,
-                    font: .body_bold_15,
-                    padding: EdgeInsets(top: 11.5, leading: 39, bottom: 11.5, trailing: 39)
-                )
-                .background(.gray100)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
-        }
-        
-    }
     
     // MARK: - Methods
     

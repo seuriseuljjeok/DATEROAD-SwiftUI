@@ -83,6 +83,8 @@ enum EMPTY {
     
     static let COURSE = "아직 등록된 코스가 없어요!"
     
+    static let DATE_SCHEDULE = "아직 연인과의 데이트 일정을 등록하지 않으셨나요?"
+    
 }
 
 enum WEBVIEW {
