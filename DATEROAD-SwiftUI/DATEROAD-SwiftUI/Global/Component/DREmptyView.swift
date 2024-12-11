@@ -17,15 +17,18 @@ struct DREmptyView: View {
     
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: .infinity, maxHeight: 394)
+                .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.size.height / 812 * 394)
             Text(title)
                 .setText(alignment: .center,
                          font: .title_bold_18,
-                         textColor: .gray300)
+                         textColor: .gray300,
+                         padding: EdgeInsets(top: 0, leading: 84, bottom: 0, trailing: 84),
+                         lineLimit: 2)
+                .multilineTextAlignment(.center)
             Spacer()
         }
         .background(.white000)

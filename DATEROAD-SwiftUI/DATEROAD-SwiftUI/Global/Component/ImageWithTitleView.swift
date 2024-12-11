@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ImageWithTextView: View {
     
+    var spacing: CGFloat = 5
+    
     var text: String
     
     var textPadding: EdgeInsets = EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 10)
@@ -29,7 +31,7 @@ struct ImageWithTextView: View {
     
     
     var body: some View {
-        HStack(spacing: 5) {
+        HStack(spacing: spacing) {
             Image(image)
                 .padding(imagePadding)
             Text(text)

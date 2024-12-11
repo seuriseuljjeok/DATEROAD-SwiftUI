@@ -83,6 +83,8 @@ enum EMPTY {
     
     static let COURSE = "아직 등록된 코스가 없어요!"
     
+    static let DATE_SCHEDULE = "아직 연인과의 데이트 일정을 등록하지 않으셨나요?"
+    
 }
 
 enum WEBVIEW {
@@ -157,6 +159,16 @@ enum HOME {
     
     static let NEW_DATE_SUB_TITLE = "가장 최근에 올라온 코스 보러가기"
         
+}
+
+enum DATESCHEDULE {
+    
+    static let DATE_SCHEDULE = "데이트 일정"
+    
+    static let D_DAY = "D-Day"
+    
+    static let SHOW_PAST_DATE_SCHEDULE = "지난 데이트 보기"
+    
 }
 
 enum PRICETAG {
