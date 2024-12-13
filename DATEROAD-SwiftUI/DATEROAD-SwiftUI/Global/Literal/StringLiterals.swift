@@ -73,7 +73,9 @@ enum POINTSYSTEM {
 
 enum MYCOURSE {
     
-    static let MYREGISTEREDCOURSE = "내가 등록한 코스"
+    static let MY_REGISTERED_COURSE = "내가 등록한 코스"
+    
+    static let CREATE_DATE_WITH_VIEWED_COURSE = "열람한 코스로 데이트를 짜보세요"
     
 }
 
@@ -84,6 +86,8 @@ enum EMPTY {
     static let COURSE = "아직 등록된 코스가 없어요!"
     
     static let DATE_SCHEDULE = "아직 연인과의 데이트 일정을 등록하지 않으셨나요?"
+    
+    static let VIEWED_COURSE = "다른 커플들의 데이트 코스를\n열람해보세요!"
     
 }
 
