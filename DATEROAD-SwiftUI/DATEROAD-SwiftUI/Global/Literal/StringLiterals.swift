@@ -200,3 +200,17 @@ enum BOTTOM_SHEET {
     static let LOCATION_FILTER = "지역을 선택해주세요"
     
 }
+
+enum TABBAR {
+    
+    static let HOME = "홈"
+    
+    static let COURSE = "코스 둘러보기"
+    
+    static let DATE_SCHEDULE = "데이트 일정"
+    
+    static let VIEWED_COURSE = "열람한 코스"
+    
+    static let MY_PAGE = "마이페이지"
+    
+}
