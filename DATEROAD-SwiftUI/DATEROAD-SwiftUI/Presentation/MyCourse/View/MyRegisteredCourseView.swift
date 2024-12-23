@@ -23,7 +23,7 @@ struct MyRegisteredCourseView: View {
         .listStyle(.plain)
         .customNavigationBar(hasLeftIcon: true,
                              hasCenterTitle: true,
-                             title: MYCOURSE.MYREGISTEREDCOURSE,
+                             title: MYCOURSE.MY_REGISTERED_COURSE,
                              leftIconAction: {
             presentationMode.wrappedValue.dismiss()
         })

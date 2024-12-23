@@ -63,6 +63,8 @@
 		CAD35D9F2D0840DB004FBEBB /* UpcomingDateScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35D9E2D0840DB004FBEBB /* UpcomingDateScheduleView.swift */; };
 		CAD35DA22D084358004FBEBB /* DateScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA12D084350004FBEBB /* DateScheduleModel.swift */; };
 		CAD35DA42D088660004FBEBB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA32D08865C004FBEBB /* String+.swift */; };
+		CAD35DA62D0C8040004FBEBB /* MyViewedCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA52D0C8040004FBEBB /* MyViewedCourseView.swift */; };
+		CAD35DA82D0D4C61004FBEBB /* DRTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA72D0D4C61004FBEBB /* DRTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +125,8 @@
 		CAD35D9E2D0840DB004FBEBB /* UpcomingDateScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDateScheduleView.swift; sourceTree = "<group>"; };
 		CAD35DA12D084350004FBEBB /* DateScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScheduleModel.swift; sourceTree = "<group>"; };
 		CAD35DA32D08865C004FBEBB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		CAD35DA52D0C8040004FBEBB /* MyViewedCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewedCourseView.swift; sourceTree = "<group>"; };
+		CAD35DA72D0D4C61004FBEBB /* DRTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6897422CC7BB29005315B1 /* MyRegisteredCourseView.swift */,
+				CAD35DA52D0C8040004FBEBB /* MyViewedCourseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 				CA6897512CCE385F005315B1 /* DRWebView.swift */,
 				CA524C932CDA2825001792C9 /* DRChipView.swift */,
 				CA8A94DC2CF4D48C008087B1 /* DRBottomSheetView.swift */,
+				CAD35DA72D0D4C61004FBEBB /* DRTabView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -627,7 +633,9 @@
 				CA524CA42CDF6BD5001792C9 /* TopUserInfoView.swift in Sources */,
 				CA524CAB2CE1EA78001792C9 /* DateCourseModel.swift in Sources */,
 				CA524C982CDA2A94001792C9 /* DateTendencyView.swift in Sources */,
+				CAD35DA82D0D4C61004FBEBB /* DRTabView.swift in Sources */,
 				CA8A94DD2CF4D48C008087B1 /* DRBottomSheetView.swift in Sources */,
+				CAD35DA62D0C8040004FBEBB /* MyViewedCourseView.swift in Sources */,
 				CA524CA92CE1DF38001792C9 /* HotDateCourseView.swift in Sources */,
 				CA68972E2CC573AF005315B1 /* TendencyTag.swift in Sources */,
 				CA8A94D92CF34ACF008087B1 /* CourseListModel.swift in Sources */,
