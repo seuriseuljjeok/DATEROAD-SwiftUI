@@ -195,6 +195,16 @@ enum COURSE {
     
 }
 
+enum POINT {
+    
+    static let POINT_HISTORY = "포인트 내역"
+    
+    static let GAINED_HISTORY = "획득 내역"
+    
+    static let USED_HISTORY = "사용 내역"
+    
+}
+
 enum BOTTOM_SHEET {
     
     static let LOCATION_FILTER = "지역을 선택해주세요"

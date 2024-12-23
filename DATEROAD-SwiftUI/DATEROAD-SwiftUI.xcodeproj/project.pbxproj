@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,7 @@
 		CA8A94DB2CF34DE1008087B1 /* Float+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A94DA2CF34DE1008087B1 /* Float+.swift */; };
 		CA8A94DD2CF4D48C008087B1 /* DRBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A94DC2CF4D48C008087B1 /* DRBottomSheetView.swift */; };
 		CA8A94DF2CF4D83A008087B1 /* LocationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A94DE2CF4D83A008087B1 /* LocationFilter.swift */; };
+		CA9EA5D12D194A0400A26DED /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9EA5D02D1949EB00A26DED /* UserInfoModel.swift */; };
 		CAD35D9F2D0840DB004FBEBB /* UpcomingDateScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35D9E2D0840DB004FBEBB /* UpcomingDateScheduleView.swift */; };
 		CAD35DA22D084358004FBEBB /* DateScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA12D084350004FBEBB /* DateScheduleModel.swift */; };
 		CAD35DA42D088660004FBEBB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD35DA32D08865C004FBEBB /* String+.swift */; };
@@ -122,12 +123,17 @@
 		CA8A94DA2CF34DE1008087B1 /* Float+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+.swift"; sourceTree = "<group>"; };
 		CA8A94DC2CF4D48C008087B1 /* DRBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRBottomSheetView.swift; sourceTree = "<group>"; };
 		CA8A94DE2CF4D83A008087B1 /* LocationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFilter.swift; sourceTree = "<group>"; };
+		CA9EA5D02D1949EB00A26DED /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		CAD35D9E2D0840DB004FBEBB /* UpcomingDateScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDateScheduleView.swift; sourceTree = "<group>"; };
 		CAD35DA12D084350004FBEBB /* DateScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScheduleModel.swift; sourceTree = "<group>"; };
 		CAD35DA32D08865C004FBEBB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CAD35DA52D0C8040004FBEBB /* MyViewedCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewedCourseView.swift; sourceTree = "<group>"; };
 		CAD35DA72D0D4C61004FBEBB /* DRTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DRTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CA9EA5C82D192EFF00A26DED /* Point */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Point; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CA6896E62CC26B55005315B1 /* Frameworks */ = {
@@ -191,6 +197,7 @@
 		CA524CA52CDF7487001792C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA9EA5D02D1949EB00A26DED /* UserInfoModel.swift */,
 				CA524CA62CDF7499001792C9 /* UpcomingDateModel.swift */,
 				CA524CAA2CE1EA78001792C9 /* DateCourseModel.swift */,
 				CA5D0F282CE3ADBA0060B72C /* BannerModel.swift */,
@@ -237,6 +244,7 @@
 		CA6896FC2CC26DD3005315B1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CA9EA5C82D192EFF00A26DED /* Point */,
 				CAD35D9C2D0840BA004FBEBB /* DateSchedule */,
 				CA8A94D32CEC57D2008087B1 /* Course */,
 				CA2FECB72CE9BDDA00C261E0 /* Onboarding */,
@@ -541,6 +549,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				CA9EA5C82D192EFF00A26DED /* Point */,
+			);
 			name = "DATEROAD-SwiftUI";
 			packageProductDependencies = (
 				CA2FECC12CEC45AB00C261E0 /* Lottie */,
@@ -629,6 +640,7 @@
 				CA524C9A2CDA2ACD001792C9 /* EditProfileView.swift in Sources */,
 				CA6897142CC28239005315B1 /* StringLiterals.swift in Sources */,
 				CA6897262CC5513B005315B1 /* ViewModifier+.swift in Sources */,
+				CA9EA5D12D194A0400A26DED /* UserInfoModel.swift in Sources */,
 				CA6897562CCE40F0005315B1 /* AlertType.swift in Sources */,
 				CA524CA42CDF6BD5001792C9 /* TopUserInfoView.swift in Sources */,
 				CA524CAB2CE1EA78001792C9 /* DateCourseModel.swift in Sources */,
